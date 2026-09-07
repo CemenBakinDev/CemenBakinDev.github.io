@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cemen Bakin — Software</title>
+<meta name="description" content="Cemen Bakin builds software that does the job and proves it did — sales tooling, mobile apps, game worlds. Based in Oslo.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Cemen Bakin — Software">
+<meta property="og:description" content="Software that does the job, and proves it did. Selected work, 2026.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#work" lang="en">Skip to the work</a>
+<a class="skip" href="#work" lang="nb">Hopp til arbeidet</a>
+
+<!-- The one authored motion moment: a reading rail that marks where you are.
+     Not decoration — it is the table of contents, and it is the only thing on
+     this page that moves. -->
+<nav class="rail" aria-label="Section index">
+  <ol>
+    <li><a href="#leadbot"    data-rail="leadbot"><i></i><span>Leadbot</span></a></li>
+    <li><a href="#timeheist"  data-rail="timeheist"><i></i><span>Time Heist</span></a></li>
+    <li><a href="#blurt"      data-rail="blurt"><i></i><span>Blurt</span></a></li>
+    <li><a href="#studyhub"   data-rail="studyhub"><i></i><span>Study Hub</span></a></li>
+    <li><a href="#papercut"   data-rail="papercut"><i></i><span>Papercut Labs</span></a></li>
+    <li><a href="#method"     data-rail="method"><i></i><span lang="en">Method</span><span lang="nb">Metode</span></a></li>
+    <li><a href="#contact"    data-rail="contact"><i></i><span lang="en">Contact</span><span lang="nb">Kontakt</span></a></li>
+  </ol>
+</nav>
+
+<div class="controls">
+  <div class="seg" role="group" aria-label="Language">
+    <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+    <button type="button" data-setlang="nb" aria-pressed="false">NO</button>
+  </div>
+  <button type="button" class="ghost" id="theme" aria-label="Switch colour scheme">
+    <span class="th-l">Light</span><span class="th-d">Dark</span>
+  </button>
+</div>
+
+<div class="sheet">
+
+<header class="masthead">
+  <p class="eyebrow"><span lang="en">Selected work · 2026</span><span lang="nb">Utvalgt arbeid · 2026</span></p>
+  <h1>Cemen&nbsp;Bakin</h1>
+  <p class="lede" lang="en">I build software that does the job — and proves it did. Sales
+    tooling that refuses to send a claim it hasn&rsquo;t checked, a game world you can
+    inspect without opening the editor, and the unglamorous machinery that keeps
+    both of them honest.</p>
+  <p class="lede" lang="nb">Jeg bygger programvare som gjør jobben – og som viser at
+    den gjorde den. Salgsverktøy som nekter å sende en påstand det ikke har
+    sjekket, en spillverden du kan inspisere uten å åpne editoren, og det lite
+    glamorøse maskineriet som holder begge ærlige.</p>
+
+  <dl class="vitals">
+    <div>
+      <dt lang="en">Based in</dt><dt lang="nb">Base</dt>
+      <dd>Oslo, <span lang="en">Norway</span><span lang="nb">Norge</span></dd>
+    </div>
+    <div>
+      <dt lang="en">Also</dt><dt lang="nb">Ellers</dt>
+      <dd lang="en">Medical sciences student</dd>
+      <dd lang="nb">Student, medisinske fag</dd>
+    </div>
+    <div>
+      <dt lang="en">Status</dt><dt lang="nb">Status</dt>
+      <dd class="live"><span lang="en">Open to freelance work</span><span lang="nb">Åpen for oppdrag</span></dd>
+    </div>
+  </dl>
+</header>
+
+<main id="work">
+  <h2 class="sec"><span lang="en">Work</span><span lang="nb">Arbeid</span></h2>
+
+  <!-- 01 ─────────────────────────────────────────────────────────── -->
+  <article class="case" id="leadbot">
+    <div class="meta">
+      <p class="idx">01</p>
+      <dl>
+        <dt lang="en">Client</dt><dt lang="nb">Kunde</dt>
+        <dd>SoulScaler</dd>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Sole developer</dd><dd lang="nb">Eneste utvikler</dd>
+        <dt lang="en">Status</dt><dt lang="nb">Status</dt>
+        <dd class="live"><span lang="en">In production</span><span lang="nb">I drift</span></dd>
+      </dl>
+      <ul class="chips">
+        <li>Python</li><li>SQLite</li><li>SMTP</li><li>Cloudflare Tunnel</li><li>systemd</li>
+      </ul>
+    </div>
+
+    <div class="body" data-idx="01">
+      <h3>Leadbot</h3>
+      <p class="sub" lang="en">Finds Norwegian businesses that genuinely need a website — and disqualifies the ones that don&rsquo;t.</p>
+      <p class="sub" lang="nb">Finner norske bedrifter som faktisk trenger nettside – og diskvalifiserer dem som ikke gjør det.</p>
+
+      <p lang="en">The Norwegian company register suggests 92% of Oslo restaurants have
+        no website. That number is wrong: the field is self-reported and almost
+        always left blank. So the register is a list of leads that will embarrass
+        you. Leadbot checks every business against the live web before it can be
+        contacted, and a company that turns out to have a working site is
+        <em>disqualified</em> — not ranked lower. Sending &ldquo;I noticed you don&rsquo;t have
+        a website&rdquo; to a company that has one loses the client in the first sentence.</p>
+      <p lang="nb">Enhetsregisteret antyder at 92 % av restaurantene i Oslo ikke har
+        nettside. Det tallet er feil: feltet er selvrapportert og står nesten alltid
+        tomt. Registeret er altså en liste med leads som vil sette deg i forlegenhet.
+        Leadbot slår opp hver bedrift mot levende nett før den kan kontaktes, og en
+        bedrift som viser seg å ha en fungerende side blir <em>diskvalifisert</em> –
+        ikke nedprioritert. «Jeg ser dere ikke har nettside» til en bedrift som har
+        en, taper kunden i første setning.</p>
+
+      <figure>
+        <img src="assets/leadbot.webp" width="1650" height="1095" loading="lazy" decoding="async"
+             alt="Leadbot's review table: five businesses, each with a verdict chip reading bad site, social only, no site, or has a good site.">
+        <figcaption lang="en">The review table. The verdict column is the product — the
+          greyed row is a business with a working site, removed from the queue rather
+          than deprioritised. Shown with the tool&rsquo;s built-in demo data; real leads
+          never leave the machine.</figcaption>
+        <figcaption lang="nb">Oversikten. Konklusjonskolonnen <em>er</em> produktet – den
+          nedtonede raden er en bedrift med fungerende side, fjernet fra køen i stedet
+          for nedprioritert. Vist med verktøyets innebygde demodata; ekte leads
+          forlater aldri maskinen.</figcaption>
+      </figure>
+
+      <p class="fact" lang="en"><b>211 tests across 14 files.</b> Every sentence in an
+        outgoing email traces back to a check, and a check that fails blocks the send
+        instead of guessing.</p>
+      <p class="fact" lang="nb"><b>211 tester i 14 filer.</b> Hver setning i en utgående
+        e-post kan spores til en sjekk, og en sjekk som feiler stopper utsendingen i
+        stedet for å gjette.</p>
+
+      <details>
+        <summary><span lang="en">More on how it stays safe to run</span><span lang="nb">Mer om hvordan den holder seg trygg å kjøre</span></summary>
+        <div>
+          <p lang="en">Nothing reaches a real business without a person approving it.
+            The pipeline drafts; a human opens the batch and releases it. Anyone who
+            asks to be left alone goes on a permanent blocklist keyed by
+            organisation number, domain and address at once, so they cannot
+            reappear through a different field.</p>
+          <p lang="en">It runs itself on a systemd timer every twenty minutes and
+            publishes its own status page through a named Cloudflare tunnel, so the
+            client can see where the queue stands without a login or a deploy.</p>
+          <p lang="nb">Ingenting når en ekte bedrift uten at et menneske har godkjent
+            det. Pipelinen skriver utkast; et menneske åpner bunken og slipper den
+            gjennom. Den som ber om å slippe, havner på en permanent sperreliste
+            nøklet på organisasjonsnummer, domene og adresse samtidig, slik at de
+            ikke kan dukke opp igjen via et annet felt.</p>
+          <p lang="nb">Den kjører seg selv på en systemd-timer hvert tjuende minutt og
+            publiserer sin egen statusside gjennom en navngitt Cloudflare-tunnel, så
+            kunden ser hvor køen står uten innlogging og uten en utrulling.</p>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- 02 ─────────────────────────────────────────────────────────── -->
+  <article class="case" id="timeheist">
+    <div class="meta">
+      <p class="idx">02</p>
+      <dl>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Gameplay &amp; tooling</dd><dd lang="nb">Spillogikk og verktøy</dd>
+        <dt lang="en">Team</dt><dt lang="nb">Team</dt>
+        <dd lang="en">Two developers</dd><dd lang="nb">To utviklere</dd>
+        <dt lang="en">Shipped</dt><dt lang="nb">Levert</dt>
+        <dd>18 <span lang="en">merged PRs</span><span lang="nb">flettede PR-er</span></dd>
+      </dl>
+      <ul class="chips">
+        <li>Roblox</li><li>Luau</li><li>Rojo</li><li>Lune</li><li>GitHub Actions</li>
+      </ul>
+    </div>
+
+    <div class="body" data-idx="02">
+      <h3>Time Heist</h3>
+      <p class="sub" lang="en">A Roblox world built entirely from source — and a way to look at it without opening the editor.</p>
+      <p class="sub" lang="nb">En Roblox-verden bygget helt fra kildekode – og en måte å se på den uten å åpne editoren.</p>
+
+      <p lang="en">You own a museum, find a time machine, and raid history to fill it.
+        There are no marketplace assets in this project: every part, rig and menu is
+        generated by Luau in the repository, and 28 islands are produced
+        procedurally from seeds. Roughly 30,900 lines across 62 source files.</p>
+      <p lang="nb">Du eier et museum, finner en tidsmaskin, og raider historien for å
+        fylle det. Prosjektet bruker ingen ferdigkjøpte assets: hver del, rigg og meny
+        genereres av Luau i repoet, og 28 øyer lages prosedyralt fra frø. Rundt
+        30 900 linjer fordelt på 62 kildefiler.</p>
+
+      <figure class="wide">
+        <img src="assets/timeheist.webp" width="968" height="835" loading="lazy" decoding="async"
+             alt="A contact sheet of twelve procedurally generated islands seen from above, each labelled with its name, coastline roundness percentage and summit height.">
+        <figcaption lang="en">Twelve of the 28 islands, drawn by the headless lens. Under
+          each: how circular the coast is, and how high the summit stands —
+          the two numbers the playtest notes kept asking about.</figcaption>
+        <figcaption lang="nb">Tolv av de 28 øyene, tegnet av den hodeløse linsen. Under
+          hver: hvor sirkulær kysten er, og hvor høyt toppunktet ligger – de to
+          tallene spilltestnotatene stadig spurte om.</figcaption>
+      </figure>
+
+      <p class="fact" lang="en"><b>Reviewing a level used to mean opening Roblox Studio.</b>
+        I built a renderer that runs the island generator headlessly and draws what it
+        made, so a claim about a shape is a picture instead of a guess — and a change
+        can be reviewed from a pull request.</p>
+      <p class="fact" lang="nb"><b>Å vurdere et brett betydde før å åpne Roblox Studio.</b>
+        Jeg bygget en renderer som kjører øygeneratoren hodeløst og tegner det den
+        lagde, slik at en påstand om en form blir et bilde i stedet for en gjetning –
+        og en endring kan vurderes fra en pull request.</p>
+
+      <details>
+        <summary><span lang="en">The part I do not let it decide</span><span lang="nb">Delen jeg ikke lar den avgjøre</span></summary>
+        <div>
+          <p lang="en">The lens also walks the island to judge whether the summit is
+            reachable. That walk is a four-neighbour grid with a fixed jump height,
+            and it does not understand diagonal parkour stepping stones — so its
+            &ldquo;cut off&rdquo; verdicts are uncalibrated and some are false alarms.
+            It agrees with the playtester on the two islands we have checked by hand,
+            which is encouraging, not proof.</p>
+          <p lang="en">So it prints its verdict and stops there. It is not a gate on
+            the build, and it is not allowed to become a claim in a pull request until
+            it has been checked against islands known to be fine. A tool that is right
+            most of the time is useful; a tool that is right most of the time and
+            treated as certain is a bug factory.</p>
+          <p lang="nb">Linsen går også over øya for å vurdere om toppen er nåbar. Den
+            vandringen er et rutenett med fire naboer og fast hoppehøyde, og den
+            forstår ikke diagonale klatresteiner – så «avskåret»-dommene er
+            ukalibrerte, og noen er falsk alarm. Den er enig med spilltesteren på de
+            to øyene vi har sjekket for hånd, noe som er oppmuntrende, ikke bevis.</p>
+          <p lang="nb">Derfor skriver den dommen sin og stopper der. Den er ingen port
+            på bygget, og den får ikke bli en påstand i en pull request før den er
+            prøvd mot øyer vi vet er i orden. Et verktøy som har rett som oftest er
+            nyttig; et verktøy som har rett som oftest og behandles som sikkert er en
+            feilfabrikk.</p>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- 03 ─────────────────────────────────────────────────────────── -->
+  <article class="case" id="blurt">
+    <div class="meta">
+      <p class="idx">03</p>
+      <dl>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Design &amp; build</dd><dd lang="nb">Design og bygg</dd>
+        <dt lang="en">Platform</dt><dt lang="nb">Plattform</dt>
+        <dd>iOS · Android · Web</dd>
+        <dt lang="en">Licence</dt><dt lang="nb">Lisens</dt>
+        <dd>MIT</dd>
+      </dl>
+      <ul class="chips">
+        <li>Expo</li><li>React Native</li><li>TypeScript</li><li>Supabase</li><li>Postgres RLS</li>
+      </ul>
+    </div>
+
+    <div class="body" data-idx="03">
+      <h3>Blurt</h3>
+      <p class="sub" lang="en">One prompt a day. Everyone gets it at the same moment and has two minutes to answer, in writing.</p>
+      <p class="sub" lang="nb">Ett spørsmål om dagen. Alle får det samtidig og har to minutter på å svare, med ord.</p>
+
+      <p lang="en">No photos, no filters, no editing after the fact. Before you post,
+        today&rsquo;s feed is rendered in full — real text, real size — and blurred out from
+        under you. It is not a paywall and not a row limit: the words are there and
+        you cannot read them. Posting develops the page. That single moment is the
+        only place in the app that spends motion.</p>
+      <p lang="nb">Ingen bilder, ingen filtre, ingen redigering i etterkant. Før du
+        poster, tegnes dagens feed i sin helhet – ekte tekst, ekte størrelse – og
+        sløres ut under deg. Det er ingen betalingsmur og ingen radgrense: ordene er
+        der, og du kan ikke lese dem. Å poste fremkaller siden. Det ene øyeblikket er
+        det eneste stedet appen bruker bevegelse.</p>
+
+      <figure class="phone">
+        <img src="assets/blurt.webp" width="780" height="1688" loading="lazy" decoding="async"
+             alt="Blurt's opening screen on a phone: the wordmark set in a serif face, the line One prompt a day. Two minutes to answer, and yesterday's top post.">
+        <figcaption lang="en">The opening screen. Fraunces sets what people wrote;
+          the interface around it stays out of the way.</figcaption>
+        <figcaption lang="nb">Åpningsskjermen. Fraunces setter det folk har skrevet;
+          grensesnittet rundt holder seg unna.</figcaption>
+      </figure>
+
+      <p class="fact" lang="en"><b>The rules live in the database, not the interface.</b>
+        One post per person per prompt is a Postgres unique constraint. Tomorrow&rsquo;s
+        question is unreadable today because the row-level policy will not return it.
+        Who voted for what never leaves the database. A check in the UI is a
+        suggestion; a constraint is a rule.</p>
+      <p class="fact" lang="nb"><b>Reglene bor i databasen, ikke i grensesnittet.</b>
+        Ett innlegg per person per spørsmål er en unique-constraint i Postgres.
+        Morgendagens spørsmål er uleselig i dag fordi radnivåpolicyen ikke returnerer
+        det. Hvem som stemte på hva forlater aldri databasen. En sjekk i grensesnittet
+        er et forslag; en constraint er en regel.</p>
+
+      <details>
+        <summary><span lang="en">Design decisions worth defending</span><span lang="nb">Designvalg verdt å forsvare</span></summary>
+        <div>
+          <p lang="en">The daily window is a state machine — <code>waiting → open →
+            closed</code> — written as pure functions of the prompt and the current
+            time. Screens read the phase; only the countdown reads seconds, and it is
+            a leaf component, so a running clock never re-renders a feed.</p>
+          <p lang="en">The whole app runs end to end with no backend configured, against
+            a mock store, including a window that genuinely opens and closes while you
+            watch it. That is deliberate: the closed state is where the app spends
+            most of its day, so it has to look right before a server exists.</p>
+          <p lang="nb">Dagsvinduet er en tilstandsmaskin – <code>venter → åpent →
+            lukket</code> – skrevet som rene funksjoner av spørsmålet og klokka.
+            Skjermene leser fasen; bare nedtellingen leser sekunder, og den er en
+            bladkomponent, så en tikkende klokke tegner aldri feeden på nytt.</p>
+          <p lang="nb">Hele appen kjører ende til ende uten backend, mot et mock-lager,
+            inkludert et vindu som faktisk åpner og lukker seg mens du ser på. Det er
+            med vilje: den lukkede tilstanden er der appen tilbringer mesteparten av
+            døgnet, så den må se riktig ut før det finnes en server.</p>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <!-- 04 ─────────────────────────────────────────────────────────── -->
+  <article class="case" id="studyhub">
+    <div class="meta">
+      <p class="idx">04</p>
+      <dl>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Sole developer</dd><dd lang="nb">Eneste utvikler</dd>
+        <dt lang="en">Status</dt><dt lang="nb">Status</dt>
+        <dd class="live"><span lang="en">Daily use</span><span lang="nb">I daglig bruk</span></dd>
+      </dl>
+      <ul class="chips">
+        <li>Python <span lang="en">stdlib</span><span lang="nb">stdbibliotek</span></li><li>GTK4</li><li>Canvas API</li><li>IMAP</li>
+      </ul>
+    </div>
+
+    <div class="body" data-idx="04">
+      <h3>Study Hub</h3>
+      <p class="sub" lang="en">A term of studying in one place — and three ways in, all reading the same data.</p>
+      <p class="sub" lang="nb">Et semester på ett sted – og tre veier inn, som leser de samme dataene.</p>
+
+      <p lang="en">Timetable, exams, coursework, mail and a focus timer. One daemon owns
+        the data and does the fetching; a GTK4 desktop app, a web UI and a status-bar
+        module are all thin clients of it. However many front-ends are open, the
+        university&rsquo;s servers see exactly one polling client — and the app starts the
+        daemon on demand, so there is nothing to remember.</p>
+      <p lang="nb">Timeplan, eksamener, innleveringer, e-post og en fokustimer. Én
+        daemon eier dataene og gjør henting; en GTK4-app, et web-grensesnitt og en
+        statuslinjemodul er tynne klienter av den. Uansett hvor mange grensesnitt som
+        er åpne, ser universitetets servere nøyaktig én klient – og appen starter
+        daemonen ved behov, så det er ingenting å huske.</p>
+
+      <figure>
+        <img src="assets/studyhub.webp" width="1600" height="522" loading="lazy" decoding="async"
+             alt="Study Hub's dashboard: a next-up lecture card, a week grid of classes, and panels for today, exams and inbox.">
+        <figcaption lang="en">The web front-end, running on the bundled sample timetable.</figcaption>
+        <figcaption lang="nb">Web-grensesnittet, med den medfølgende eksempeltimeplanen.</figcaption>
+      </figure>
+
+      <p class="fact" lang="en"><b>No pip installs, no build step, no account.</b> Standard
+        library only, bound to localhost, and every byte of your data stays on your
+        machine as plain JSON you can read in a text editor.</p>
+      <p class="fact" lang="nb"><b>Ingen pip-installasjoner, ingen byggesteg, ingen
+        konto.</b> Bare standardbiblioteket, bundet til localhost, og hver byte av
+        dataene dine blir liggende på maskinen som ren JSON du kan lese i en
+        teksteditor.</p>
+    </div>
+  </article>
+
+  <!-- 05 ─────────────────────────────────────────────────────────── -->
+  <article class="case" id="papercut">
+    <div class="meta">
+      <p class="idx">05</p>
+      <dl>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Operator</dd><dd lang="nb">Operatør</dd>
+        <dt lang="en">Shipped</dt><dt lang="nb">Levert</dt>
+        <dd lang="en">Three tools</dd><dd lang="nb">Tre verktøy</dd>
+      </dl>
+      <ul class="chips">
+        <li>Static web</li><li>WASM-free JS</li><li><span lang="en">Written charter</span><span lang="nb">Skriftlig charter</span></li>
+      </ul>
+    </div>
+
+    <div class="body" data-idx="05">
+      <h3>Papercut Labs</h3>
+      <p class="sub" lang="en">A portfolio of very small tools, each aimed at one recurring, mildly humiliating manual task.</p>
+      <p class="sub" lang="nb">En portefølje av små verktøy, hvert rettet mot én gjentakende, litt ydmykende manuell oppgave.</p>
+
+      <p lang="en">Fixing the names an AI transcript keeps mangling. Cataloguing a
+        3D-print folder you have lost a file in. Checking a reference list at 1am
+        before a deadline. Each one runs in the browser, needs no account, and the
+        free version is the real tool rather than a demo of one.</p>
+      <p lang="nb">Å fikse navnene en AI-transkripsjon stadig ødelegger. Å katalogisere
+        en 3D-utskriftsmappe du har mistet en fil i. Å sjekke en referanseliste klokka
+        ett om natta før en frist. Hvert av dem kjører i nettleseren, krever ingen
+        konto, og gratisversjonen er det ekte verktøyet – ikke en demo av ett.</p>
+
+      <figure>
+        <img src="assets/papercut.webp" width="1600" height="1056" loading="lazy" decoding="async"
+             alt="Papercut Labs' landing page listing PodNameFix, STLTidy and RefCheck, each with a one-line audience and a call to action.">
+        <figcaption lang="en">Three tools, three specific people having three specific bad afternoons.</figcaption>
+        <figcaption lang="nb">Tre verktøy, tre bestemte folk som har tre bestemte dårlige ettermiddager.</figcaption>
+      </figure>
+
+      <p class="fact" lang="en"><b>An experiment in autonomy, run in the open.</b> The
+        business operates under a written constitution whose scoring function prices
+        the operator&rsquo;s own attention as a cost, and excludes followers, stars and
+        &ldquo;this is cool&rdquo; from the scoreboard entirely. An AI agent does the
+        day-to-day operating; a published <em>how this works</em> page says so plainly
+        rather than leaving anyone to find out.</p>
+      <p class="fact" lang="nb"><b>Et eksperiment i autonomi, kjørt i åpenhet.</b>
+        Virksomheten drives under en skriftlig konstitusjon der poengfunksjonen priser
+        operatørens egen tid som en kostnad, og utelukker følgere, stjerner og «dette
+        er kult» fra tavla. En AI-agent står for den daglige driften; en publisert
+        <em>slik fungerer dette</em>-side sier det rett ut i stedet for å la noen
+        oppdage det selv.</p>
+    </div>
+  </article>
+
+  <!-- ─── method ───────────────────────────────────────────────── -->
+  <section id="method">
+    <h2 class="sec"><span lang="en">How I work</span><span lang="nb">Slik jobber jeg</span></h2>
+
+    <div class="principle">
+      <p class="idx">i</p>
+      <div>
+        <h3 lang="en">Verify before you claim</h3>
+        <h3 lang="nb">Sjekk før du påstår</h3>
+        <p lang="en">A check in Leadbot once decided a company&rsquo;s site was abandoned by
+          reading a copyright year — out of a bundled JavaScript library&rsquo;s licence
+          comment, and separately out of image metadata. Never the page&rsquo;s actual
+          footer. It was caught by opening two &ldquo;abandoned&rdquo; sites by hand
+          before a batch of 25 real emails went out.</p>
+        <p lang="en">Every bug that has genuinely mattered in my work has that same
+          shape: a check that quietly failed, promoted into a claim. So the rule is
+          not &ldquo;test more&rdquo;. It is that a failed check has to be louder than a
+          passed one, and nothing unverified is ever allowed to reach a customer.</p>
+        <p lang="nb">En sjekk i Leadbot slo en gang fast at en bedrifts side var
+          forlatt, ved å lese et copyright-år – ut av lisenskommentaren i et pakket
+          JavaScript-bibliotek, og separat ut av bildemetadata. Aldri fra sidens
+          faktiske bunntekst. Det ble oppdaget ved å åpne to «forlatte» sider for hånd
+          før en bunke på 25 ekte e-poster gikk ut.</p>
+        <p lang="nb">Hver feil som virkelig har betydd noe i arbeidet mitt har den
+          samme formen: en sjekk som stille feilet, forfremmet til en påstand. Regelen
+          er derfor ikke «test mer». Den er at en feilet sjekk må bråke mer enn en
+          bestått, og at ingenting ubekreftet får nå en kunde.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <p class="idx">ii</p>
+      <div>
+        <h3 lang="en">The constraint is the product</h3>
+        <h3 lang="nb">Begrensningen er produktet</h3>
+        <p lang="en">Leadbot throws away leads that would have looked good on a
+          dashboard, because a business with a working website is not a customer.
+          Blurt will not let you edit a post after the fact. Study Hub refuses to
+          hold your data anywhere but your own disk.</p>
+        <p lang="en">In each case the restriction is the thing being sold. When a
+          client asks me to relax one, that is worth a real conversation rather than
+          a checkbox — usually the constraint is load-bearing and the request is
+          pointing at something else.</p>
+        <p lang="nb">Leadbot kaster leads som ville sett bra ut på et dashbord, fordi en
+          bedrift med fungerende nettside ikke er en kunde. Blurt lar deg ikke redigere
+          et innlegg i etterkant. Study Hub nekter å oppbevare dataene dine noe annet
+          sted enn på din egen disk.</p>
+        <p lang="nb">I hvert tilfelle er begrensningen det som selges. Når en kunde ber
+          meg myke opp en av dem, fortjener det en ekte samtale og ikke en
+          avkrysningsboks – som regel er begrensningen bærende, og ønsket peker på noe
+          annet.</p>
+      </div>
+    </div>
+
+    <div class="principle">
+      <p class="idx">iii</p>
+      <div>
+        <h3 lang="en">It has to run when nobody is watching</h3>
+        <h3 lang="nb">Det må gå når ingen ser på</h3>
+        <p lang="en">Software that needs a person to babysit it has not been finished,
+          it has been demonstrated. Leadbot runs on a timer and publishes its own
+          status page. Time Heist can answer a playtest note and open a pull request
+          overnight. Study Hub starts its own daemon.</p>
+        <p lang="en">The corollary matters just as much: the switches that could do
+          harm unattended — sending real email without approval, raising send volume,
+          merging to main — are deliberately left off, and documented as off. Knowing
+          which parts to automate means knowing which parts not to.</p>
+        <p lang="nb">Programvare som trenger en barnevakt er ikke ferdig, den er
+          demonstrert. Leadbot går på en timer og publiserer sin egen statusside. Time
+          Heist kan svare på et spilltestnotat og åpne en pull request over natta.
+          Study Hub starter sin egen daemon.</p>
+        <p lang="nb">Konsekvensen betyr like mye: bryterne som kan gjøre skade uten
+          tilsyn – å sende ekte e-post uten godkjenning, å øke sendevolum, å flette til
+          main – står bevisst av, og er dokumentert som av. Å vite hva som skal
+          automatiseres er å vite hva som ikke skal.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── also ─────────────────────────────────────────────────── -->
+  <section id="also">
+    <h2 class="sec"><span lang="en">Also built</span><span lang="nb">Også bygget</span></h2>
+    <p class="also-lede" lang="en">Smaller things, mostly for my own desk. They are here
+      because a workshop tells you more about a person than a showroom does.</p>
+    <p class="also-lede" lang="nb">Mindre ting, stort sett til mitt eget skrivebord. De
+      står her fordi et verksted sier mer om en person enn et utstillingsvindu gjør.</p>
+    <ul class="also">
+      <li><b>splash</b><span lang="en">An animated terminal intro — rain and a lava lamp — that hands off into a system summary.</span><span lang="nb">En animert terminalintro – regn og en lavalampe – som gir stafettpinnen til en systemoversikt.</span></li>
+      <li><b>pulse</b><span lang="en">The same renderer driven by whatever is playing, with automatic gain so quiet tracks still move it.</span><span lang="nb">Samme renderer drevet av det som spilles, med automatisk forsterkning så stille låter fortsatt beveger den.</span></li>
+      <li><b>waybar + dunst</b><span lang="en">A status bar and notification theme sharing one material and one rule: colour is a state signal, never decoration.</span><span lang="nb">En statuslinje og et varseltema med samme materiale og én regel: farge er et tilstandssignal, aldri pynt.</span></li>
+      <li><b>sddm</b><span lang="en">A login screen whose palette is regenerated from the current wallpaper, so the machine looks like one designed object from boot.</span><span lang="nb">En innloggingsskjerm der paletten genereres på nytt fra gjeldende bakgrunn, så maskinen ser ut som ett designet objekt fra oppstart.</span></li>
+      <li><b>ntfy + systemd</b><span lang="en">Long-running jobs that text my phone when they finish, and a queue I can text back.</span><span lang="nb">Langtkjørende jobber som sender melding til telefonen når de er ferdige, og en kø jeg kan sende melding tilbake til.</span></li>
+    </ul>
+  </section>
+</main>
+
+<footer id="contact">
+  <h2 class="sec"><span lang="en">Contact</span><span lang="nb">Kontakt</span></h2>
+  <p class="closing" lang="en">If you have something that needs building — or something
+    that already exists and needs to be made trustworthy — write to me. Tell me what
+    the job actually is; I will tell you honestly whether I am the right person for it.</p>
+  <p class="closing" lang="nb">Har du noe som må bygges – eller noe som allerede finnes
+    og må bli til å stole på – så skriv til meg. Fortell meg hva jobben faktisk er, så
+    sier jeg ærlig fra om jeg er rett person for den.</p>
+
+  <ul class="links">
+    <li>
+      <span class="k" lang="en">Email</span><span class="k" lang="nb">E-post</span>
+      <a href="mailto:2highup@protonmail.com">2highup@protonmail.com</a>
+    </li>
+    <li>
+      <span class="k">GitHub</span>
+      <a href="https://github.com/CemenBakinDev" rel="me noopener">CemenBakinDev</a>
+    </li>
+    <li>
+      <span class="k" lang="en">Location</span><span class="k" lang="nb">Sted</span>
+      <span>Oslo, <span lang="en">Norway</span><span lang="nb">Norge</span> · CET</span>
+    </li>
+  </ul>
+
+  <p class="colophon" lang="en">Set in Fraunces, Instrument Sans and JetBrains Mono.
+    Hand-written HTML and CSS — no framework, no build step, no tracking. Every
+    screenshot is of software that runs; the Leadbot shot uses that tool&rsquo;s own demo
+    data rather than a client&rsquo;s.</p>
+  <p class="colophon" lang="nb">Satt i Fraunces, Instrument Sans og JetBrains Mono.
+    Håndskrevet HTML og CSS – uten rammeverk, uten byggesteg, uten sporing. Hver
+    skjermdump viser programvare som kjører; Leadbot-bildet bruker verktøyets egne
+    demodata, ikke en kundes.</p>
+</footer>
+
+</div><!-- /.sheet -->
+
+<script src="main.js" defer></script>
+</body>
+</html>
