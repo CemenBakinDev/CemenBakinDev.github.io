@@ -193,6 +193,48 @@
     sync();
   });
 
+  /* --- the three languages -----------------------------------------------
+     Each sentence opens the same introduction written in that language. The
+     introductions are open in the markup, so with this file blocked all three
+     are simply readable; the enhancement is the closing. */
+
+  var tongues = document.getElementById("tongues");
+  if (tongues) {
+    var lines = Array.prototype.slice.call(tongues.querySelectorAll(".tongue"));
+    if (lines.length) {
+      tongues.setAttribute("data-enhanced", "");
+
+      var shutBio = function (btn) {
+        var b = document.getElementById(btn.getAttribute("aria-controls"));
+        btn.setAttribute("aria-expanded", "false");
+        if (b) b.classList.remove("is-open");
+      };
+
+      lines.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var wasOpen = btn.getAttribute("aria-expanded") === "true";
+          lines.forEach(shutBio);
+          if (wasOpen) return;
+          var b = document.getElementById(btn.getAttribute("aria-controls"));
+          if (!b) return;
+          btn.setAttribute("aria-expanded", "true");
+          /* restart the stagger even if the same panel is reopened */
+          b.classList.remove("is-open");
+          void b.offsetWidth;
+          b.classList.add("is-open");
+        });
+      });
+
+      tongues.addEventListener("keydown", function (e) {
+        if (e.key !== "Escape") return;
+        var open = lines.filter(function (b) {
+          return b.getAttribute("aria-expanded") === "true";
+        })[0];
+        if (open) { shutBio(open); open.focus(); }
+      });
+    }
+  }
+
   /* --- the bar ----------------------------------------------------------
      Two states to keep in step with the scroll: the hairline, which appears
      once the masthead is behind you, and the section mark.

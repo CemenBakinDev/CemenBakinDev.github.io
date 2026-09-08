@@ -181,6 +181,15 @@ hero, flipped, with the address set larger than anything except the name.
 but the backing store and gradients belong to each field, and a field only
 animates while it is on screen, so the two never both run.
 
+**Testing caveat, learned four times over.** Headless Chromium with
+`--virtual-time-budget` freezes CSS transitions, CSS animations and
+`performance.now()` at their first frame. Measuring a colour behind a
+`transition`, or an element mid-`animation`, reports the *start* value and
+looks exactly like a cascade bug. Twice in this project that cost a wrong
+diagnosis. When measuring anything animated, disable the transition on the
+element first (or pass `--force-prefers-reduced-motion`) and measure again
+before believing the number.
+
 **The three languages are shown, not claimed.** `#tongues` prints the same
 sentence in Norwegian, English and Russian, and it is the one block that
 deliberately ignores the EN/NO switch — all three lines are always visible,
@@ -188,6 +197,13 @@ because their being there together *is* the evidence. Flags were considered and
 rejected: a flag claims a country, not a language, and "fluent" written next to
 your own name is exactly the unverifiable adjective the rest of this site
 argues against. The old table that said "Norsk — FLUENT" three times is gone.
+
+Each sentence is a button, and behind it is the same introduction written in
+that language — which is where the about text went when the home page was cut.
+The introductions are open in the markup and `main.js` closes them, so with the
+script blocked all three are simply readable. The line reveal animates position
+only, never opacity, and never from behind a clip the line starts outside of: a
+stalled animation must not be able to hide the text.
 
 **The About blocks.** `.blocks` is a grid whose `gap: 1px` over a `--line`
 background *is* the hairline grid — there are no borders on the blocks

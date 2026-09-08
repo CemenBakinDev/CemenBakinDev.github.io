@@ -107,6 +107,28 @@ img { max-width: 100%; height: auto; display: block; }
 [data-lang="en"] [lang="nb"] { display: none; }
 [data-lang="nb"] [lang="en"] { display: none; }
 
+
+/* --- selection -----------------------------------------------------------
+   The page never defined this, so a drag got the browser's system highlight —
+   usually a saturated blue — laid over a near-black ground, and over the grain
+   layer, which composites with mix-blend-mode and dirties it further. On a
+   page with no accent colour that reads as a rendering fault rather than a
+   selection. Ink on paper, inverted, in both themes. */
+
+::selection {
+  background: var(--ink);
+  color: var(--ground);
+  text-shadow: none;
+}
+::-moz-selection {
+  background: var(--ink);
+  color: var(--ground);
+  text-shadow: none;
+}
+/* The grain sits above the text and blends; excluding it keeps a selection
+   crisp instead of tinting it. */
+.hero::after, .field::after { user-select: none; }
+
 /* --- focus & skip -------------------------------------------------------- */
 
 :focus-visible {
@@ -514,7 +536,14 @@ main, .hero-in, .hero-foot {
 }
 [data-lang] #tongues .tongue { display: block; }
 .tongue {
+  display: block;
+  width: 100%;
   margin: 0;
+  padding: .1rem 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
   font-family: var(--serif);
   font-weight: 400;
   font-size: clamp(1.5rem, 4vw, 2.6rem);
@@ -529,6 +558,53 @@ main, .hero-in, .hero-foot {
   margin: clamp(1.25rem, 3vh, 2rem) 0 0;
   font-size: .92rem;
   color: var(--ink-3);
+}
+
+/* the line you have opened leads; the other two step back */
+#tongues[data-enhanced] .tongue[aria-expanded="true"] { color: var(--ink); }
+#tongues[data-enhanced]:has(.tongue[aria-expanded="true"]) .tongue[aria-expanded="false"] {
+  color: var(--ink-3);
+}
+
+/* --- what is behind a sentence ------------------------------------------
+   Open by default, so with the script blocked all three introductions are
+   simply there. main.js stamps the section and closes them — the enhancement
+   hides, it never reveals. Same rule as the project panels. */
+
+.bio {
+  max-width: 34rem;
+  padding: clamp(1rem, 2.5vh, 1.5rem) 0 clamp(1.5rem, 4vh, 2.25rem);
+}
+[data-lang] #tongues .bio { display: block; }
+#tongues[data-enhanced] .bio { display: none; }
+#tongues[data-enhanced] .bio.is-open { display: block; }
+
+.bio p {
+  margin: 0;
+  font-size: clamp(1rem, 1.9vw, 1.12rem);
+  line-height: 1.6;
+  color: var(--ink-2);
+  text-wrap: pretty;
+}
+.bio p + p { margin-top: .7rem; }
+
+/* The lines arrive one after another. Position only — never opacity, and
+   never a clip the line starts outside of: an animation that stalls at its
+   first frame must not be able to hide the text. Stalled, this is 10px low
+   and perfectly readable. */
+@keyframes line-in { from { transform: translateY(10px); } }
+
+#tongues[data-enhanced] .bio.is-open p span {
+  display: block;
+  animation: line-in .5s cubic-bezier(.22, .61, .36, 1);
+}
+.bio.is-open p:nth-child(1) span { animation-delay: .00s; }
+.bio.is-open p:nth-child(2) span { animation-delay: .07s; }
+.bio.is-open p:nth-child(3) span { animation-delay: .14s; }
+.bio.is-open p:nth-child(4) span { animation-delay: .21s; }
+
+@media (prefers-reduced-motion: reduce) {
+  #tongues[data-enhanced] .bio.is-open p span { animation: none; }
 }
 /* the line matching the language you are reading the site in leads */
 [data-lang="en"] .tongue[lang="en"],
