@@ -4,103 +4,433 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cemen Bakin — Software</title>
-<meta name="description" content="Cemen Bakin builds software that does the job and proves it did — sales tooling, mobile apps, game worlds. Based in Oslo.">
+<meta name="description" content="Cemen Bakin builds websites and software for Norwegian businesses — sites in production for Eltervåg Gruppen and LC Pulverlakk, plus sales tooling, mobile apps and game systems. Oslo and Bergen; Norwegian, English and Russian.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta property="og:title" content="Cemen Bakin — Software">
-<meta property="og:description" content="Software that does the job, and proves it did. Selected work, 2026.">
+<meta property="og:description" content="Websites and software that do the job, and prove they did. Selected work, 2026.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<a class="skip" href="#work" lang="en">Skip to the work</a>
-<a class="skip" href="#work" lang="nb">Hopp til arbeidet</a>
+<a class="skip" href="#sites" lang="en">Skip to the work</a>
+<a class="skip" href="#sites" lang="nb">Hopp til arbeidet</a>
 
-<!-- The one authored motion moment: a reading rail that marks where you are.
-     Not decoration — it is the table of contents, and it is the only thing on
-     this page that moves. -->
-<nav class="rail" aria-label="Section index">
-  <ol>
-    <li><a href="#leadbot"    data-rail="leadbot"><i></i><span>Leadbot</span></a></li>
-    <li><a href="#timeheist"  data-rail="timeheist"><i></i><span>Time Heist</span></a></li>
-    <li><a href="#blurt"      data-rail="blurt"><i></i><span>Blurt</span></a></li>
-    <li><a href="#studyhub"   data-rail="studyhub"><i></i><span>Study Hub</span></a></li>
-    <li><a href="#papercut"   data-rail="papercut"><i></i><span>Papercut Labs</span></a></li>
-    <li><a href="#method"     data-rail="method"><i></i><span lang="en">Method</span><span lang="nb">Metode</span></a></li>
-    <li><a href="#contact"    data-rail="contact"><i></i><span lang="en">Contact</span><span lang="nb">Kontakt</span></a></li>
-  </ol>
-</nav>
+<!-- One piece of chrome, not three. The bar carries identity, position and the
+     two switches; it is also the only thing on the page that changes state as
+     you scroll, so the motion is information rather than atmosphere. -->
+<header class="topbar" id="topbar">
+  <div class="bar">
+    <a class="wordmark" href="#top">Cemen&nbsp;Bakin</a>
 
-<div class="controls">
-  <div class="seg" role="group" aria-label="Language">
-    <button type="button" data-setlang="en" aria-pressed="true">EN</button>
-    <button type="button" data-setlang="nb" aria-pressed="false">NO</button>
+    <nav class="secnav" aria-label="Sections">
+      <a href="#sites"    data-spy="sites"><span lang="en">Websites</span><span lang="nb">Nettsider</span></a>
+      <a href="#work"     data-spy="work"><span lang="en">Software</span><span lang="nb">Programvare</span></a>
+      <a href="#about"    data-spy="about"><span lang="en">About</span><span lang="nb">Om meg</span></a>
+      <a href="#method"   data-spy="method"><span lang="en">Method</span><span lang="nb">Metode</span></a>
+      <a href="#contact" data-spy="contact"><span lang="en">Contact</span><span lang="nb">Kontakt</span></a>
+    </nav>
+
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" data-setlang="en" aria-pressed="true">EN</button>
+        <button type="button" data-setlang="nb" aria-pressed="false">NO</button>
+      </div>
+      <button type="button" class="ghost" id="theme" aria-label="Switch colour scheme">
+        <span class="to-dark">Dark</span><span class="to-light">Light</span>
+      </button>
+    </div>
   </div>
-  <button type="button" class="ghost" id="theme" aria-label="Switch colour scheme">
-    <span class="th-l">Light</span><span class="th-d">Dark</span>
-  </button>
-</div>
+</header>
+
+<!-- The opening is a field, not a card: near-black, a single serif line, and
+     the quiet credential row along the bottom. Nothing here is a control
+     except the cue, and nothing moves. -->
+<section class="hero" id="top">
+  <!-- Seven ridges, because Bergen is the city between the seven mountains.
+       Drawn in canvas rather than photographed: nothing here is stock. -->
+  <canvas class="ridge" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <p class="eyebrow"><span lang="en">Oslo &amp; Bergen · 2026</span><span lang="nb">Oslo og Bergen · 2026</span></p>
+    <h1>Cemen&nbsp;Bakin</h1>
+    <p class="role" lang="en">Websites &amp; software</p>
+    <p class="role" lang="nb">Nettsider og programvare</p>
+  </div>
+
+  <div class="hero-foot">
+    <a class="cue" href="#sites" aria-label="Go to the work"><span aria-hidden="true">&#8595;</span></a>
+  </div>
+</section>
 
 <div class="sheet">
 
-<header class="masthead">
-  <p class="eyebrow"><span lang="en">Selected work · 2026</span><span lang="nb">Utvalgt arbeid · 2026</span></p>
-  <h1>Cemen&nbsp;Bakin</h1>
-  <p class="lede" lang="en">I build software that does the job — and proves it did. Sales
-    tooling that refuses to send a claim it hasn&rsquo;t checked, a game world you can
-    inspect without opening the editor, and the unglamorous machinery that keeps
-    both of them honest.</p>
-  <p class="lede" lang="nb">Jeg bygger programvare som gjør jobben – og som viser at
-    den gjorde den. Salgsverktøy som nekter å sende en påstand det ikke har
-    sjekket, en spillverden du kan inspisere uten å åpne editoren, og det lite
-    glamorøse maskineriet som holder begge ærlige.</p>
-
-  <dl class="vitals">
+<main>
+<section id="sites">
+  <div class="track-head">
     <div>
-      <dt lang="en">Based in</dt><dt lang="nb">Base</dt>
-      <dd>Oslo, <span lang="en">Norway</span><span lang="nb">Norge</span></dd>
+      <h2 class="sec"><span lang="en">Websites</span><span lang="nb">Nettsider</span></h2>
+      <p class="sec-lede" lang="en">Two sites, both live, both linked. Open one.</p>
+      <p class="sec-lede" lang="nb">To sider, begge i drift, begge lenket. Åpne en.</p>
     </div>
-    <div>
-      <dt lang="en">Also</dt><dt lang="nb">Ellers</dt>
-      <dd lang="en">Medical sciences student</dd>
-      <dd lang="nb">Student, medisinske fag</dd>
-    </div>
-    <div>
-      <dt lang="en">Status</dt><dt lang="nb">Status</dt>
-      <dd class="live"><span lang="en">Open to freelance work</span><span lang="nb">Åpen for oppdrag</span></dd>
-    </div>
-  </dl>
-</header>
 
-<main id="work">
-  <h2 class="sec"><span lang="en">Work</span><span lang="nb">Arbeid</span></h2>
+    <div class="track-nav">
+      <p class="track-count"><span class="num" data-count>1</span><span class="num"> / </span><span class="num" data-total>1</span></p>
+      <div class="track-btns">
+        <button type="button" class="tbtn" data-track="prev" aria-label="Previous"><span aria-hidden="true">&#8592;</span></button>
+        <button type="button" class="tbtn" data-track="next" aria-label="Next"><span aria-hidden="true">&#8594;</span></button>
+      </div>
+    </div>
+  </div>
 
-  <!-- 01 ─────────────────────────────────────────────────────────── -->
-  <article class="case" id="leadbot">
-    <div class="meta">
-      <p class="idx">01</p>
-      <dl>
-        <dt lang="en">Client</dt><dt lang="nb">Kunde</dt>
-        <dd>SoulScaler</dd>
-        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
-        <dd lang="en">Sole developer</dd><dd lang="nb">Eneste utvikler</dd>
-        <dt lang="en">Status</dt><dt lang="nb">Status</dt>
-        <dd class="live"><span lang="en">In production</span><span lang="nb">I drift</span></dd>
+  <div class="track" tabindex="0" role="region" aria-label="Client websites, scrolls sideways">
+      <a class="pcard" href="#d-eltervaag" data-detail="d-eltervaag" aria-controls="d-eltervaag" aria-expanded="false">
+        <span class="pcard-shot">
+          <img src="assets/eltervaag.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="">
+        </span>
+        <span class="pcard-text">
+          <span class="pcard-name">Eltervåg Gruppen</span>
+          <span class="pcard-sub" lang="en">Transport &amp; staffing · Sandnes</span>
+          <span class="pcard-sub" lang="nb">Transport og bemanning · Sandnes</span>
+        </span>
+        <span class="pcard-more">
+          <span lang="en">Read more</span><span lang="nb">Les mer</span>
+          <span aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+
+      <a class="pcard" href="#d-lcpulverlakk" data-detail="d-lcpulverlakk" aria-controls="d-lcpulverlakk" aria-expanded="false">
+        <span class="pcard-shot">
+          <img src="assets/lcpulverlakk.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="">
+        </span>
+        <span class="pcard-text">
+          <span class="pcard-name">LC Pulverlakk</span>
+          <span class="pcard-sub" lang="en">Surface treatment · Tjelta</span>
+          <span class="pcard-sub" lang="nb">Overflatebehandling · Tjelta</span>
+        </span>
+        <span class="pcard-more">
+          <span lang="en">Read more</span><span lang="nb">Les mer</span>
+          <span aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+  </div>
+
+  <div class="details">
+    <div class="detail" id="d-eltervaag" role="region" aria-label="Eltervåg Gruppen">
+      <div class="detail-in">
+<div class="wcard-media">
+      <div class="stage">
+        <img class="desk" src="assets/eltervaag.webp" width="1600" height="1000" loading="lazy" decoding="async"
+             alt="Eltervåg Gruppen's home page: the headline Folk, biler og utstyr når du mangler kapasitet, beside a photograph of a white Scania truck.">
+        <img class="mob" src="assets/eltervaag-m.webp" width="560" height="1212" loading="lazy" decoding="async"
+             alt="The same page on a phone, the headline stacked and the phone number still in the bar.">
+      </div>
+    </div>
+
+    <div class="wcard-body">
+      <h3>Eltervåg Gruppen</h3>
+      <p class="sub" lang="en">Transport and staffing in Sandnes — a site that sells spare capacity, not a company brochure.</p>
+      <p class="sub" lang="nb">Transport og bemanning i Sandnes – en side som selger ledig kapasitet, ikke en bedriftsbrosjyre.</p>
+
+
+      <dl class="figs">
+        <div>
+          <dd class="fig-n">2</dd>
+          <dt lang="en">Actions on the page</dt><dt lang="nb">Handlinger på siden</dt>
+        </div>
+        <div>
+          <dd class="fig-n">4</dd>
+          <dt lang="en">Services offered</dt><dt lang="nb">Tjenester tilbudt</dt>
+        </div>
+        <div>
+          <dd class="fig-n">1</dd>
+          <dt lang="en">Number, every width</dt><dt lang="nb">Nummer, alle bredder</dt>
+        </div>
       </dl>
-      <ul class="chips">
-        <li>Python</li><li>SQLite</li><li>SMTP</li><li>Cloudflare Tunnel</li><li>systemd</li>
-      </ul>
+
+      <dl class="specs">
+        <div>
+          <dt lang="en">Studio</dt><dt lang="nb">Studio</dt>
+          <dd>SoulScaler</dd>
+        </div>
+        <div>
+          <dt lang="en">Sector</dt><dt lang="nb">Bransje</dt>
+          <dd lang="en">Transport &amp; staffing</dd><dd lang="nb">Transport og bemanning</dd>
+        </div>
+        <div>
+          <dt lang="en">Based</dt><dt lang="nb">Sted</dt>
+          <dd>Sandnes</dd>
+        </div>
+        <div>
+          <dt lang="en">Status</dt><dt lang="nb">Status</dt>
+          <dd class="live"><span lang="en">Live</span><span lang="nb">I drift</span></dd>
+        </div>
+      </dl>
+
+      <div class="prose">
+        <p class="fact" lang="en"><b>The phone number is the call to action.</b> A haulage job gets booked by phone, not through a contact form — so the number is a button in the menu bar rather than a line in the footer.</p>
+        <p class="fact" lang="nb"><b>Nummeret er handlingen.</b> Et transportoppdrag bestilles på telefon, ikke i et kontaktskjema – så nummeret er en knapp i menylinja, ikke en linje i bunnteksten.</p>
+      </div>
+
+      <details>
+      <summary><span lang="en">The reasoning</span><span lang="nb">Resonnementet</span></summary>
+      <div>
+        <p lang="en">Eltervåg hires out drivers, vehicles, containers and cranes, often at short notice. The question a customer arrives with is never &ldquo;who are you&rdquo; — it is &ldquo;can you be there tomorrow morning&rdquo;. So the page is built around that one question, and the phone number sits in the menu bar at every screen width.</p>
+        <p lang="nb">Eltervåg leier ut sjåfør, bil, container og kran, ofte på kort varsel. Spørsmålet kunden kommer med er aldri «hvem er dere» – det er «kan dere stille i morgen tidlig». Derfor er siden bygget rundt det ene spørsmålet, og telefonnummeret står i menylinja på hver eneste skjermbredde.</p>
+      </div>
+      </details>
+
+      <p class="visit"><a href="https://eltervaag.no" rel="noopener">eltervaag.no <span aria-hidden="true">&#8599;</span></a></p>
+    </div>
+        <p class="detail-close">
+          <button type="button" data-close><span lang="en">Close</span><span lang="nb">Lukk</span></button>
+        </p>
+      </div>
     </div>
 
-    <div class="body" data-idx="01">
+    <div class="detail" id="d-lcpulverlakk" role="region" aria-label="LC Pulverlakk">
+      <div class="detail-in">
+<div class="wcard-media">
+      <div class="stage">
+        <img class="desk" src="assets/lcpulverlakk.webp" width="1600" height="1000" loading="lazy" decoding="async"
+             alt="LC Pulverlakk's home page: the headline Overflatebehandling for industri som stiller krav over a dark photograph of a coating booth.">
+        <img class="mob" src="assets/lcpulverlakk-m.webp" width="560" height="1212" loading="lazy" decoding="async"
+             alt="The same page on a phone, with the corrosion classes still in the opening paragraph.">
+      </div>
+    </div>
+
+    <div class="wcard-body">
+      <h3>LC Pulverlakk</h3>
+      <p class="sub" lang="en">Powder coating for industry — where the documentation is the product.</p>
+      <p class="sub" lang="nb">Pulverlakkering for industri – der dokumentasjonen er selve varen.</p>
+
+
+      <dl class="figs">
+        <div>
+          <dd class="fig-n">C1–C4</dd>
+          <dt lang="en">Corrosion classes today</dt><dt lang="nb">Korrosjonsklasser i dag</dt>
+        </div>
+        <div>
+          <dd class="fig-n">C5</dd>
+          <dt lang="en">From the 2026 plant</dt><dt lang="nb">Fra anlegget i 2026</dt>
+        </div>
+        <div>
+          <dd class="fig-n">1</dd>
+          <dt lang="en">Announcement bar</dt><dt lang="nb">Kunngjøring på toppen</dt>
+        </div>
+      </dl>
+
+      <dl class="specs">
+        <div>
+          <dt lang="en">Studio</dt><dt lang="nb">Studio</dt>
+          <dd>SoulScaler</dd>
+        </div>
+        <div>
+          <dt lang="en">Sector</dt><dt lang="nb">Bransje</dt>
+          <dd lang="en">Surface treatment</dd><dd lang="nb">Overflatebehandling</dd>
+        </div>
+        <div>
+          <dt lang="en">Based</dt><dt lang="nb">Sted</dt>
+          <dd>Tjelta, Rogaland</dd>
+        </div>
+        <div>
+          <dt lang="en">Status</dt><dt lang="nb">Status</dt>
+          <dd class="live"><span lang="en">Live</span><span lang="nb">I drift</span></dd>
+        </div>
+      </dl>
+
+      <div class="prose">
+        <p class="fact" lang="en"><b>The technical detail is the headline.</b> To a buyer, &ldquo;corrosion class C5&rdquo; is not small print — it is the criterion that decides whether they are allowed to use the supplier at all.</p>
+        <p class="fact" lang="nb"><b>Den tekniske detaljen er overskriften.</b> For en innkjøper er «korrosjonsklasse C5» ikke finstoff – det er kriteriet som avgjør om de kan bruke leverandøren i det hele tatt.</p>
+      </div>
+
+      <details>
+      <summary><span lang="en">The reasoning</span><span lang="nb">Resonnementet</span></summary>
+      <div>
+        <p lang="en">A workshop at Tjelta, between Stavanger and Sandnes. Its customers are industrial buyers with requirements, and the corrosion class is the first thing they look for. So the page states it outright in the opening paragraph — C1&ndash;C4 today, C5 from the new plant in 2026 — instead of burying it in a datasheet three clicks down.</p>
+        <p lang="nb">Et verksted på Tjelta, mellom Stavanger og Sandnes. Kundene er industri som stiller krav, og korrosjonsklassen er det første de leter etter. Derfor sier siden den rett ut allerede i ingressen – C1&ndash;C4 i dag, C5 fra det nye anlegget i 2026 – i stedet for å gjemme den i et datablad tre klikk ned.</p>
+      </div>
+      </details>
+
+      <p class="visit"><a href="https://lcpulverlakk.no" rel="noopener">lcpulverlakk.no <span aria-hidden="true">&#8599;</span></a></p>
+    </div>
+        <p class="detail-close">
+          <button type="button" data-close><span lang="en">Close</span><span lang="nb">Lukk</span></button>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="track-head">
+    <div>
+      <h2 class="sec"><span lang="en">Software</span><span lang="nb">Programvare</span></h2>
+      <p class="sec-lede" lang="en">Tools, a game world, an app. Open one for the evidence.</p>
+      <p class="sec-lede" lang="nb">Verktøy, en spillverden, en app. Åpne en for dokumentasjonen.</p>
+    </div>
+
+    <div class="track-nav">
+      <p class="track-count"><span class="num" data-count>1</span><span class="num"> / </span><span class="num" data-total>1</span></p>
+      <div class="track-btns">
+        <button type="button" class="tbtn" data-track="prev" aria-label="Previous"><span aria-hidden="true">&#8592;</span></button>
+        <button type="button" class="tbtn" data-track="next" aria-label="Next"><span aria-hidden="true">&#8594;</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="track" tabindex="0" role="region" aria-label="Software projects, scrolls sideways">
+      <a class="pcard" href="#d-leadbot" data-detail="d-leadbot" aria-controls="d-leadbot" aria-expanded="false">
+        <span class="pcard-shot">
+          <img src="assets/leadbot.webp" width="1650" height="1095" loading="lazy" decoding="async" alt="">
+        </span>
+        <span class="pcard-text">
+          <span class="pcard-name">Leadbot</span>
+          <span class="pcard-sub" lang="en">Sales tooling · Python</span>
+          <span class="pcard-sub" lang="nb">Salgsverktøy · Python</span>
+        </span>
+        <span class="pcard-more">
+          <span lang="en">Read more</span><span lang="nb">Les mer</span>
+          <span aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+
+      <a class="pcard" href="#d-timeheist" data-detail="d-timeheist" aria-controls="d-timeheist" aria-expanded="false">
+        <span class="pcard-shot">
+          <img src="assets/timeheist.webp" width="968" height="835" loading="lazy" decoding="async" alt="">
+        </span>
+        <span class="pcard-text">
+          <span class="pcard-name">Time Heist</span>
+          <span class="pcard-sub" lang="en">Roblox world · Luau</span>
+          <span class="pcard-sub" lang="nb">Roblox-verden · Luau</span>
+        </span>
+        <span class="pcard-more">
+          <span lang="en">Read more</span><span lang="nb">Les mer</span>
+          <span aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+
+      <a class="pcard" href="#d-blurt" data-detail="d-blurt" aria-controls="d-blurt" aria-expanded="false">
+        <span class="pcard-shot">
+          <img src="assets/blurt.webp" width="780" height="1688" loading="lazy" decoding="async" alt="">
+        </span>
+        <span class="pcard-text">
+          <span class="pcard-name">Blurt</span>
+          <span class="pcard-sub" lang="en">iOS · Android · Web</span>
+          <span class="pcard-sub" lang="nb">iOS · Android · web</span>
+        </span>
+        <span class="pcard-more">
+          <span lang="en">Read more</span><span lang="nb">Les mer</span>
+          <span aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+
+      <a class="pcard" href="#d-studyhub" data-detail="d-studyhub" aria-controls="d-studyhub" aria-expanded="false">
+        <span class="pcard-shot">
+          <img src="assets/studyhub.webp" width="1600" height="522" loading="lazy" decoding="async" alt="">
+        </span>
+        <span class="pcard-text">
+          <span class="pcard-name">Study Hub</span>
+          <span class="pcard-sub" lang="en">Desktop, web &amp; status bar</span>
+          <span class="pcard-sub" lang="nb">Skrivebord, web og statuslinje</span>
+        </span>
+        <span class="pcard-more">
+          <span lang="en">Read more</span><span lang="nb">Les mer</span>
+          <span aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+
+      <a class="pcard" href="#d-papercut" data-detail="d-papercut" aria-controls="d-papercut" aria-expanded="false">
+        <span class="pcard-shot">
+          <img src="assets/papercut.webp" width="1600" height="1056" loading="lazy" decoding="async" alt="">
+        </span>
+        <span class="pcard-text">
+          <span class="pcard-name">Papercut Labs</span>
+          <span class="pcard-sub" lang="en">Three browser tools</span>
+          <span class="pcard-sub" lang="nb">Tre nettleserverktøy</span>
+        </span>
+        <span class="pcard-more">
+          <span lang="en">Read more</span><span lang="nb">Les mer</span>
+          <span aria-hidden="true">&#8594;</span>
+        </span>
+      </a>
+  </div>
+
+  <div class="details">
+    <div class="detail" id="d-leadbot" role="region" aria-label="Leadbot">
+      <div class="detail-in">
+<div class="case-head">
       <h3>Leadbot</h3>
       <p class="sub" lang="en">Finds Norwegian businesses that genuinely need a website — and disqualifies the ones that don&rsquo;t.</p>
       <p class="sub" lang="nb">Finner norske bedrifter som faktisk trenger nettside – og diskvalifiserer dem som ikke gjør det.</p>
+    </div>
 
+    <dl class="figs">
+      <div>
+        <dd class="fig-n">211</dd>
+        <dt lang="en">Tests</dt><dt lang="nb">Tester</dt>
+      </div>
+      <div>
+        <dd class="fig-n">14</dd>
+        <dt lang="en">Test files</dt><dt lang="nb">Testfiler</dt>
+      </div>
+      <div>
+        <dd class="fig-n">20 min</dd>
+        <dt lang="en">Between runs</dt><dt lang="nb">Mellom kjøringer</dt>
+      </div>
+    </dl>
+
+    <dl class="specs">
+      <div>
+        <dt lang="en">Client</dt><dt lang="nb">Kunde</dt>
+        <dd>SoulScaler</dd>
+      </div>
+      <div>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Sole developer</dd><dd lang="nb">Eneste utvikler</dd>
+      </div>
+      <div>
+        <dt lang="en">Status</dt><dt lang="nb">Status</dt>
+        <dd class="live"><span lang="en">In production</span><span lang="nb">I drift</span></dd>
+      </div>
+      <div class="wide">
+        <dt lang="en">Built with</dt><dt lang="nb">Bygget med</dt>
+        <dd><ul class="chips">
+          <li>Python</li><li>SQLite</li><li>SMTP</li><li>Cloudflare Tunnel</li><li>systemd</li>
+        </ul></dd>
+      </div>
+    </dl>
+
+
+    <figure>
+      <div class="frame">
+        <img src="assets/leadbot.webp" width="1650" height="1095" loading="lazy" decoding="async"
+             alt="Leadbot's review table: five businesses, each with a verdict chip reading bad site, social only, no site, or has a good site.">
+      </div>
+      <figcaption lang="en">The review table. The verdict column is the product — the
+        greyed row is a business with a working site, removed from the queue rather
+        than deprioritised. Shown with the tool&rsquo;s built-in demo data; real leads
+        never leave the machine.</figcaption>
+      <figcaption lang="nb">Oversikten. Konklusjonskolonnen <em>er</em> produktet – den
+        nedtonede raden er en bedrift med fungerende side, fjernet fra køen i stedet
+        for nedprioritert. Vist med verktøyets innebygde demodata; ekte leads
+        forlater aldri maskinen.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <p class="fact" lang="en"><b>211 tests across 14 files.</b> Every sentence in an
+        outgoing email traces back to a check, and a check that fails blocks the send
+        instead of guessing.</p>
+      <p class="fact" lang="nb"><b>211 tester i 14 filer.</b> Hver setning i en utgående
+        e-post kan spores til en sjekk, og en sjekk som feiler stopper utsendingen i
+        stedet for å gjette.</p>
+
+      <details>
+        <summary><span lang="en">The reasoning</span><span lang="nb">Resonnementet</span></summary>
+        <div>
       <p lang="en">The Norwegian company register suggests 92% of Oslo restaurants have
         no website. That number is wrong: the field is self-reported and almost
         always left blank. So the register is a list of leads that will embarrass
@@ -115,30 +445,6 @@
         bedrift som viser seg å ha en fungerende side blir <em>diskvalifisert</em> –
         ikke nedprioritert. «Jeg ser dere ikke har nettside» til en bedrift som har
         en, taper kunden i første setning.</p>
-
-      <figure>
-        <img src="assets/leadbot.webp" width="1650" height="1095" loading="lazy" decoding="async"
-             alt="Leadbot's review table: five businesses, each with a verdict chip reading bad site, social only, no site, or has a good site.">
-        <figcaption lang="en">The review table. The verdict column is the product — the
-          greyed row is a business with a working site, removed from the queue rather
-          than deprioritised. Shown with the tool&rsquo;s built-in demo data; real leads
-          never leave the machine.</figcaption>
-        <figcaption lang="nb">Oversikten. Konklusjonskolonnen <em>er</em> produktet – den
-          nedtonede raden er en bedrift med fungerende side, fjernet fra køen i stedet
-          for nedprioritert. Vist med verktøyets innebygde demodata; ekte leads
-          forlater aldri maskinen.</figcaption>
-      </figure>
-
-      <p class="fact" lang="en"><b>211 tests across 14 files.</b> Every sentence in an
-        outgoing email traces back to a check, and a check that fails blocks the send
-        instead of guessing.</p>
-      <p class="fact" lang="nb"><b>211 tester i 14 filer.</b> Hver setning i en utgående
-        e-post kan spores til en sjekk, og en sjekk som feiler stopper utsendingen i
-        stedet for å gjette.</p>
-
-      <details>
-        <summary><span lang="en">More on how it stays safe to run</span><span lang="nb">Mer om hvordan den holder seg trygg å kjøre</span></summary>
-        <div>
           <p lang="en">Nothing reaches a real business without a person approving it.
             The pipeline drafts; a human opens the batch and releases it. Anyone who
             asks to be left alone goes on a permanent blocklist keyed by
@@ -158,50 +464,71 @@
         </div>
       </details>
     </div>
-  </article>
-
-  <!-- 02 ─────────────────────────────────────────────────────────── -->
-  <article class="case" id="timeheist">
-    <div class="meta">
-      <p class="idx">02</p>
-      <dl>
-        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
-        <dd lang="en">Gameplay &amp; tooling</dd><dd lang="nb">Spillogikk og verktøy</dd>
-        <dt lang="en">Team</dt><dt lang="nb">Team</dt>
-        <dd lang="en">Two developers</dd><dd lang="nb">To utviklere</dd>
-        <dt lang="en">Shipped</dt><dt lang="nb">Levert</dt>
-        <dd>18 <span lang="en">merged PRs</span><span lang="nb">flettede PR-er</span></dd>
-      </dl>
-      <ul class="chips">
-        <li>Roblox</li><li>Luau</li><li>Rojo</li><li>Lune</li><li>GitHub Actions</li>
-      </ul>
+        <p class="detail-close">
+          <button type="button" data-close><span lang="en">Close</span><span lang="nb">Lukk</span></button>
+        </p>
+      </div>
     </div>
 
-    <div class="body" data-idx="02">
+    <div class="detail" id="d-timeheist" role="region" aria-label="Time Heist">
+      <div class="detail-in">
+<div class="case-head">
       <h3>Time Heist</h3>
       <p class="sub" lang="en">A Roblox world built entirely from source — and a way to look at it without opening the editor.</p>
       <p class="sub" lang="nb">En Roblox-verden bygget helt fra kildekode – og en måte å se på den uten å åpne editoren.</p>
+    </div>
 
-      <p lang="en">You own a museum, find a time machine, and raid history to fill it.
-        There are no marketplace assets in this project: every part, rig and menu is
-        generated by Luau in the repository, and 28 islands are produced
-        procedurally from seeds. Roughly 30,900 lines across 62 source files.</p>
-      <p lang="nb">Du eier et museum, finner en tidsmaskin, og raider historien for å
-        fylle det. Prosjektet bruker ingen ferdigkjøpte assets: hver del, rigg og meny
-        genereres av Luau i repoet, og 28 øyer lages prosedyralt fra frø. Rundt
-        30 900 linjer fordelt på 62 kildefiler.</p>
+    <dl class="figs">
+      <div>
+        <dd class="fig-n">28</dd>
+        <dt lang="en">Islands, procedural</dt><dt lang="nb">Øyer, prosedyrale</dt>
+      </div>
+      <div>
+        <dd class="fig-n">30 900</dd>
+        <dt lang="en">Lines of Luau</dt><dt lang="nb">Linjer Luau</dt>
+      </div>
+      <div>
+        <dd class="fig-n">0</dd>
+        <dt lang="en">Bought assets</dt><dt lang="nb">Kjøpte assets</dt>
+      </div>
+    </dl>
 
-      <figure class="wide">
+    <dl class="specs">
+      <div>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Gameplay &amp; tooling</dd><dd lang="nb">Spillogikk og verktøy</dd>
+      </div>
+      <div>
+        <dt lang="en">Team</dt><dt lang="nb">Team</dt>
+        <dd lang="en">Two developers</dd><dd lang="nb">To utviklere</dd>
+      </div>
+      <div>
+        <dt lang="en">Shipped</dt><dt lang="nb">Levert</dt>
+        <dd><span class="num">18</span> <span lang="en">merged PRs</span><span lang="nb">flettede PR-er</span></dd>
+      </div>
+      <div class="wide">
+        <dt lang="en">Built with</dt><dt lang="nb">Bygget med</dt>
+        <dd><ul class="chips">
+          <li>Roblox</li><li>Luau</li><li>Rojo</li><li>Lune</li><li>GitHub Actions</li>
+        </ul></dd>
+      </div>
+    </dl>
+
+
+    <figure class="wide">
+      <div class="frame">
         <img src="assets/timeheist.webp" width="968" height="835" loading="lazy" decoding="async"
              alt="A contact sheet of twelve procedurally generated islands seen from above, each labelled with its name, coastline roundness percentage and summit height.">
-        <figcaption lang="en">Twelve of the 28 islands, drawn by the headless lens. Under
-          each: how circular the coast is, and how high the summit stands —
-          the two numbers the playtest notes kept asking about.</figcaption>
-        <figcaption lang="nb">Tolv av de 28 øyene, tegnet av den hodeløse linsen. Under
-          hver: hvor sirkulær kysten er, og hvor høyt toppunktet ligger – de to
-          tallene spilltestnotatene stadig spurte om.</figcaption>
-      </figure>
+      </div>
+      <figcaption lang="en">Twelve of the 28 islands, drawn by the headless lens. Under
+        each: how circular the coast is, and how high the summit stands —
+        the two numbers the playtest notes kept asking about.</figcaption>
+      <figcaption lang="nb">Tolv av de 28 øyene, tegnet av den hodeløse linsen. Under
+        hver: hvor sirkulær kysten er, og hvor høyt toppunktet ligger – de to
+        tallene spilltestnotatene stadig spurte om.</figcaption>
+    </figure>
 
+    <div class="prose">
       <p class="fact" lang="en"><b>Reviewing a level used to mean opening Roblox Studio.</b>
         I built a renderer that runs the island generator headlessly and draws what it
         made, so a claim about a shape is a picture instead of a guess — and a change
@@ -212,8 +539,16 @@
         og en endring kan vurderes fra en pull request.</p>
 
       <details>
-        <summary><span lang="en">The part I do not let it decide</span><span lang="nb">Delen jeg ikke lar den avgjøre</span></summary>
+        <summary><span lang="en">The reasoning</span><span lang="nb">Resonnementet</span></summary>
         <div>
+      <p lang="en">You own a museum, find a time machine, and raid history to fill it.
+        There are no marketplace assets in this project: every part, rig and menu is
+        generated by Luau in the repository, and 28 islands are produced
+        procedurally from seeds. Roughly 30,900 lines across 62 source files.</p>
+      <p lang="nb">Du eier et museum, finner en tidsmaskin, og raider historien for å
+        fylle det. Prosjektet bruker ingen ferdigkjøpte assets: hver del, rigg og meny
+        genereres av Luau i repoet, og 28 øyer lages prosedyralt fra frø. Rundt
+        30 900 linjer fordelt på 62 kildefiler.</p>
           <p lang="en">The lens also walks the island to judge whether the summit is
             reachable. That walk is a four-neighbour grid with a fixed jump height,
             and it does not understand diagonal parkour stepping stones — so its
@@ -238,50 +573,69 @@
         </div>
       </details>
     </div>
-  </article>
-
-  <!-- 03 ─────────────────────────────────────────────────────────── -->
-  <article class="case" id="blurt">
-    <div class="meta">
-      <p class="idx">03</p>
-      <dl>
-        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
-        <dd lang="en">Design &amp; build</dd><dd lang="nb">Design og bygg</dd>
-        <dt lang="en">Platform</dt><dt lang="nb">Plattform</dt>
-        <dd>iOS · Android · Web</dd>
-        <dt lang="en">Licence</dt><dt lang="nb">Lisens</dt>
-        <dd>MIT</dd>
-      </dl>
-      <ul class="chips">
-        <li>Expo</li><li>React Native</li><li>TypeScript</li><li>Supabase</li><li>Postgres RLS</li>
-      </ul>
+        <p class="detail-close">
+          <button type="button" data-close><span lang="en">Close</span><span lang="nb">Lukk</span></button>
+        </p>
+      </div>
     </div>
 
-    <div class="body" data-idx="03">
+    <div class="detail" id="d-blurt" role="region" aria-label="Blurt">
+      <div class="detail-in">
+<div class="case-head">
       <h3>Blurt</h3>
       <p class="sub" lang="en">One prompt a day. Everyone gets it at the same moment and has two minutes to answer, in writing.</p>
       <p class="sub" lang="nb">Ett spørsmål om dagen. Alle får det samtidig og har to minutter på å svare, med ord.</p>
+    </div>
 
-      <p lang="en">No photos, no filters, no editing after the fact. Before you post,
-        today&rsquo;s feed is rendered in full — real text, real size — and blurred out from
-        under you. It is not a paywall and not a row limit: the words are there and
-        you cannot read them. Posting develops the page. That single moment is the
-        only place in the app that spends motion.</p>
-      <p lang="nb">Ingen bilder, ingen filtre, ingen redigering i etterkant. Før du
-        poster, tegnes dagens feed i sin helhet – ekte tekst, ekte størrelse – og
-        sløres ut under deg. Det er ingen betalingsmur og ingen radgrense: ordene er
-        der, og du kan ikke lese dem. Å poste fremkaller siden. Det ene øyeblikket er
-        det eneste stedet appen bruker bevegelse.</p>
+    <dl class="figs">
+      <div>
+        <dd class="fig-n">1</dd>
+        <dt lang="en">Prompt a day</dt><dt lang="nb">Spørsmål om dagen</dt>
+      </div>
+      <div>
+        <dd class="fig-n">2 min</dd>
+        <dt lang="en">To answer</dt><dt lang="nb">Å svare på</dt>
+      </div>
+      <div>
+        <dd class="fig-n">0</dd>
+        <dt lang="en">Edits after posting</dt><dt lang="nb">Redigeringer etterpå</dt>
+      </div>
+    </dl>
 
-      <figure class="phone">
+    <dl class="specs">
+      <div>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Design &amp; build</dd><dd lang="nb">Design og bygg</dd>
+      </div>
+      <div>
+        <dt lang="en">Platform</dt><dt lang="nb">Plattform</dt>
+        <dd>iOS · Android · Web</dd>
+      </div>
+      <div>
+        <dt lang="en">Licence</dt><dt lang="nb">Lisens</dt>
+        <dd>MIT</dd>
+      </div>
+      <div class="wide">
+        <dt lang="en">Built with</dt><dt lang="nb">Bygget med</dt>
+        <dd><ul class="chips">
+          <li>Expo</li><li>React Native</li><li>TypeScript</li><li>Supabase</li><li>Postgres RLS</li>
+        </ul></dd>
+      </div>
+    </dl>
+
+
+    <figure class="phone">
+      <div class="frame">
         <img src="assets/blurt.webp" width="780" height="1688" loading="lazy" decoding="async"
              alt="Blurt's opening screen on a phone: the wordmark set in a serif face, the line One prompt a day. Two minutes to answer, and yesterday's top post.">
-        <figcaption lang="en">The opening screen. Fraunces sets what people wrote;
-          the interface around it stays out of the way.</figcaption>
-        <figcaption lang="nb">Åpningsskjermen. Fraunces setter det folk har skrevet;
-          grensesnittet rundt holder seg unna.</figcaption>
-      </figure>
+      </div>
+      <figcaption lang="en">The opening screen. A serif sets what people wrote;
+        the interface around it stays out of the way.</figcaption>
+      <figcaption lang="nb">Åpningsskjermen. En antikva setter det folk har skrevet;
+        grensesnittet rundt holder seg unna.</figcaption>
+    </figure>
 
+    <div class="prose">
       <p class="fact" lang="en"><b>The rules live in the database, not the interface.</b>
         One post per person per prompt is a Postgres unique constraint. Tomorrow&rsquo;s
         question is unreadable today because the row-level policy will not return it.
@@ -294,8 +648,18 @@
         er et forslag; en constraint er en regel.</p>
 
       <details>
-        <summary><span lang="en">Design decisions worth defending</span><span lang="nb">Designvalg verdt å forsvare</span></summary>
+        <summary><span lang="en">The reasoning</span><span lang="nb">Resonnementet</span></summary>
         <div>
+      <p lang="en">No photos, no filters, no editing after the fact. Before you post,
+        today&rsquo;s feed is rendered in full — real text, real size — and blurred out from
+        under you. It is not a paywall and not a row limit: the words are there and
+        you cannot read them. Posting develops the page. That single moment is the
+        only place in the app that spends motion.</p>
+      <p lang="nb">Ingen bilder, ingen filtre, ingen redigering i etterkant. Før du
+        poster, tegnes dagens feed i sin helhet – ekte tekst, ekte størrelse – og
+        sløres ut under deg. Det er ingen betalingsmur og ingen radgrense: ordene er
+        der, og du kan ikke lese dem. Å poste fremkaller siden. Det ene øyeblikket er
+        det eneste stedet appen bruker bevegelse.</p>
           <p lang="en">The daily window is a state machine — <code>waiting → open →
             closed</code> — written as pure functions of the prompt and the current
             time. Screens read the phase; only the countdown reads seconds, and it is
@@ -315,28 +679,74 @@
         </div>
       </details>
     </div>
-  </article>
-
-  <!-- 04 ─────────────────────────────────────────────────────────── -->
-  <article class="case" id="studyhub">
-    <div class="meta">
-      <p class="idx">04</p>
-      <dl>
-        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
-        <dd lang="en">Sole developer</dd><dd lang="nb">Eneste utvikler</dd>
-        <dt lang="en">Status</dt><dt lang="nb">Status</dt>
-        <dd class="live"><span lang="en">Daily use</span><span lang="nb">I daglig bruk</span></dd>
-      </dl>
-      <ul class="chips">
-        <li>Python <span lang="en">stdlib</span><span lang="nb">stdbibliotek</span></li><li>GTK4</li><li>Canvas API</li><li>IMAP</li>
-      </ul>
+        <p class="detail-close">
+          <button type="button" data-close><span lang="en">Close</span><span lang="nb">Lukk</span></button>
+        </p>
+      </div>
     </div>
 
-    <div class="body" data-idx="04">
+    <div class="detail" id="d-studyhub" role="region" aria-label="Study Hub">
+      <div class="detail-in">
+<div class="case-head">
       <h3>Study Hub</h3>
       <p class="sub" lang="en">A term of studying in one place — and three ways in, all reading the same data.</p>
       <p class="sub" lang="nb">Et semester på ett sted – og tre veier inn, som leser de samme dataene.</p>
+    </div>
 
+    <dl class="figs">
+      <div>
+        <dd class="fig-n">3</dd>
+        <dt lang="en">Front-ends, one daemon</dt><dt lang="nb">Grensesnitt, én daemon</dt>
+      </div>
+      <div>
+        <dd class="fig-n">0</dd>
+        <dt lang="en">Dependencies</dt><dt lang="nb">Avhengigheter</dt>
+      </div>
+      <div>
+        <dd class="fig-n">0</dd>
+        <dt lang="en">Accounts</dt><dt lang="nb">Kontoer</dt>
+      </div>
+    </dl>
+
+    <dl class="specs">
+      <div>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Sole developer</dd><dd lang="nb">Eneste utvikler</dd>
+      </div>
+      <div>
+        <dt lang="en">Status</dt><dt lang="nb">Status</dt>
+        <dd class="live"><span lang="en">Daily use</span><span lang="nb">I daglig bruk</span></dd>
+      </div>
+      <div class="wide">
+        <dt lang="en">Built with</dt><dt lang="nb">Bygget med</dt>
+        <dd><ul class="chips">
+          <li>Python <span lang="en">stdlib</span><span lang="nb">stdbibliotek</span></li><li>GTK4</li><li>Canvas API</li><li>IMAP</li>
+        </ul></dd>
+      </div>
+    </dl>
+
+
+    <figure>
+      <div class="frame">
+        <img src="assets/studyhub.webp" width="1600" height="522" loading="lazy" decoding="async"
+             alt="Study Hub's dashboard: a next-up lecture card, a week grid of classes, and panels for today, exams and inbox.">
+      </div>
+      <figcaption lang="en">The web front-end, running on the bundled sample timetable.</figcaption>
+      <figcaption lang="nb">Web-grensesnittet, med den medfølgende eksempeltimeplanen.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <p class="fact" lang="en"><b>No pip installs, no build step, no account.</b> Standard
+        library only, bound to localhost, and every byte of your data stays on your
+        machine as plain JSON you can read in a text editor.</p>
+      <p class="fact" lang="nb"><b>Ingen pip-installasjoner, ingen byggesteg, ingen
+        konto.</b> Bare standardbiblioteket, bundet til localhost, og hver byte av
+        dataene dine blir liggende på maskinen som ren JSON du kan lese i en
+        teksteditor.</p>
+    </div>
+        <details>
+        <summary><span lang="en">The reasoning</span><span lang="nb">Resonnementet</span></summary>
+        <div>
       <p lang="en">Timetable, exams, coursework, mail and a focus timer. One daemon owns
         the data and does the fetching; a GTK4 desktop app, a web UI and a status-bar
         module are all thin clients of it. However many front-ends are open, the
@@ -347,60 +757,62 @@
         statuslinjemodul er tynne klienter av den. Uansett hvor mange grensesnitt som
         er åpne, ser universitetets servere nøyaktig én klient – og appen starter
         daemonen ved behov, så det er ingenting å huske.</p>
+        </div>
+        </details>
 
-      <figure>
-        <img src="assets/studyhub.webp" width="1600" height="522" loading="lazy" decoding="async"
-             alt="Study Hub's dashboard: a next-up lecture card, a week grid of classes, and panels for today, exams and inbox.">
-        <figcaption lang="en">The web front-end, running on the bundled sample timetable.</figcaption>
-        <figcaption lang="nb">Web-grensesnittet, med den medfølgende eksempeltimeplanen.</figcaption>
-      </figure>
-
-      <p class="fact" lang="en"><b>No pip installs, no build step, no account.</b> Standard
-        library only, bound to localhost, and every byte of your data stays on your
-        machine as plain JSON you can read in a text editor.</p>
-      <p class="fact" lang="nb"><b>Ingen pip-installasjoner, ingen byggesteg, ingen
-        konto.</b> Bare standardbiblioteket, bundet til localhost, og hver byte av
-        dataene dine blir liggende på maskinen som ren JSON du kan lese i en
-        teksteditor.</p>
-    </div>
-  </article>
-
-  <!-- 05 ─────────────────────────────────────────────────────────── -->
-  <article class="case" id="papercut">
-    <div class="meta">
-      <p class="idx">05</p>
-      <dl>
-        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
-        <dd lang="en">Operator</dd><dd lang="nb">Operatør</dd>
-        <dt lang="en">Shipped</dt><dt lang="nb">Levert</dt>
-        <dd lang="en">Three tools</dd><dd lang="nb">Tre verktøy</dd>
-      </dl>
-      <ul class="chips">
-        <li>Static web</li><li>WASM-free JS</li><li><span lang="en">Written charter</span><span lang="nb">Skriftlig charter</span></li>
-      </ul>
+        <p class="detail-close">
+          <button type="button" data-close><span lang="en">Close</span><span lang="nb">Lukk</span></button>
+        </p>
+      </div>
     </div>
 
-    <div class="body" data-idx="05">
+    <div class="detail" id="d-papercut" role="region" aria-label="Papercut Labs">
+      <div class="detail-in">
+<div class="case-head">
       <h3>Papercut Labs</h3>
       <p class="sub" lang="en">A portfolio of very small tools, each aimed at one recurring, mildly humiliating manual task.</p>
       <p class="sub" lang="nb">En portefølje av små verktøy, hvert rettet mot én gjentakende, litt ydmykende manuell oppgave.</p>
+    </div>
 
-      <p lang="en">Fixing the names an AI transcript keeps mangling. Cataloguing a
-        3D-print folder you have lost a file in. Checking a reference list at 1am
-        before a deadline. Each one runs in the browser, needs no account, and the
-        free version is the real tool rather than a demo of one.</p>
-      <p lang="nb">Å fikse navnene en AI-transkripsjon stadig ødelegger. Å katalogisere
-        en 3D-utskriftsmappe du har mistet en fil i. Å sjekke en referanseliste klokka
-        ett om natta før en frist. Hvert av dem kjører i nettleseren, krever ingen
-        konto, og gratisversjonen er det ekte verktøyet – ikke en demo av ett.</p>
+    <dl class="figs">
+      <div>
+        <dd class="fig-n">3</dd>
+        <dt lang="en">Tools shipped</dt><dt lang="nb">Verktøy levert</dt>
+      </div>
+      <div>
+        <dd class="fig-n">0</dd>
+        <dt lang="en">Accounts needed</dt><dt lang="nb">Kontoer nødvendig</dt>
+      </div>
+    </dl>
 
-      <figure>
+    <dl class="specs">
+      <div>
+        <dt lang="en">Role</dt><dt lang="nb">Rolle</dt>
+        <dd lang="en">Operator</dd><dd lang="nb">Operatør</dd>
+      </div>
+      <div>
+        <dt lang="en">Shipped</dt><dt lang="nb">Levert</dt>
+        <dd lang="en">Three tools</dd><dd lang="nb">Tre verktøy</dd>
+      </div>
+      <div class="wide">
+        <dt lang="en">Built with</dt><dt lang="nb">Bygget med</dt>
+        <dd><ul class="chips">
+          <li>Static web</li><li>WASM-free JS</li><li><span lang="en">Written charter</span><span lang="nb">Skriftlig charter</span></li>
+        </ul></dd>
+      </div>
+    </dl>
+
+
+    <figure>
+      <div class="frame">
         <img src="assets/papercut.webp" width="1600" height="1056" loading="lazy" decoding="async"
              alt="Papercut Labs' landing page listing PodNameFix, STLTidy and RefCheck, each with a one-line audience and a call to action.">
-        <figcaption lang="en">Three tools, three specific people having three specific bad afternoons.</figcaption>
-        <figcaption lang="nb">Tre verktøy, tre bestemte folk som har tre bestemte dårlige ettermiddager.</figcaption>
-      </figure>
+      </div>
+      <figcaption lang="en">Three tools, three specific people having three specific bad afternoons.</figcaption>
+      <figcaption lang="nb">Tre verktøy, tre bestemte folk som har tre bestemte dårlige ettermiddager.</figcaption>
+    </figure>
 
+    <div class="prose">
       <p class="fact" lang="en"><b>An experiment in autonomy, run in the open.</b> The
         business operates under a written constitution whose scoring function prices
         the operator&rsquo;s own attention as a cost, and excludes followers, stars and
@@ -414,112 +826,171 @@
         <em>slik fungerer dette</em>-side sier det rett ut i stedet for å la noen
         oppdage det selv.</p>
     </div>
-  </article>
+        <details>
+        <summary><span lang="en">The reasoning</span><span lang="nb">Resonnementet</span></summary>
+        <div>
+      <p lang="en">Fixing the names an AI transcript keeps mangling. Cataloguing a
+        3D-print folder you have lost a file in. Checking a reference list at 1am
+        before a deadline. Each one runs in the browser, needs no account, and the
+        free version is the real tool rather than a demo of one.</p>
+      <p lang="nb">Å fikse navnene en AI-transkripsjon stadig ødelegger. Å katalogisere
+        en 3D-utskriftsmappe du har mistet en fil i. Å sjekke en referanseliste klokka
+        ett om natta før en frist. Hvert av dem kjører i nettleseren, krever ingen
+        konto, og gratisversjonen er det ekte verktøyet – ikke en demo av ett.</p>
+        </div>
+        </details>
 
-  <!-- ─── method ───────────────────────────────────────────────── -->
-  <section id="method">
-    <h2 class="sec"><span lang="en">How I work</span><span lang="nb">Slik jobber jeg</span></h2>
-
-    <div class="principle">
-      <p class="idx">i</p>
-      <div>
-        <h3 lang="en">Verify before you claim</h3>
-        <h3 lang="nb">Sjekk før du påstår</h3>
-        <p lang="en">A check in Leadbot once decided a company&rsquo;s site was abandoned by
-          reading a copyright year — out of a bundled JavaScript library&rsquo;s licence
-          comment, and separately out of image metadata. Never the page&rsquo;s actual
-          footer. It was caught by opening two &ldquo;abandoned&rdquo; sites by hand
-          before a batch of 25 real emails went out.</p>
-        <p lang="en">Every bug that has genuinely mattered in my work has that same
-          shape: a check that quietly failed, promoted into a claim. So the rule is
-          not &ldquo;test more&rdquo;. It is that a failed check has to be louder than a
-          passed one, and nothing unverified is ever allowed to reach a customer.</p>
-        <p lang="nb">En sjekk i Leadbot slo en gang fast at en bedrifts side var
-          forlatt, ved å lese et copyright-år – ut av lisenskommentaren i et pakket
-          JavaScript-bibliotek, og separat ut av bildemetadata. Aldri fra sidens
-          faktiske bunntekst. Det ble oppdaget ved å åpne to «forlatte» sider for hånd
-          før en bunke på 25 ekte e-poster gikk ut.</p>
-        <p lang="nb">Hver feil som virkelig har betydd noe i arbeidet mitt har den
-          samme formen: en sjekk som stille feilet, forfremmet til en påstand. Regelen
-          er derfor ikke «test mer». Den er at en feilet sjekk må bråke mer enn en
-          bestått, og at ingenting ubekreftet får nå en kunde.</p>
+        <p class="detail-close">
+          <button type="button" data-close><span lang="en">Close</span><span lang="nb">Lukk</span></button>
+        </p>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="principle">
-      <p class="idx">ii</p>
-      <div>
-        <h3 lang="en">The constraint is the product</h3>
-        <h3 lang="nb">Begrensningen er produktet</h3>
-        <p lang="en">Leadbot throws away leads that would have looked good on a
-          dashboard, because a business with a working website is not a customer.
-          Blurt will not let you edit a post after the fact. Study Hub refuses to
-          hold your data anywhere but your own disk.</p>
-        <p lang="en">In each case the restriction is the thing being sold. When a
-          client asks me to relax one, that is worth a real conversation rather than
-          a checkbox — usually the constraint is load-bearing and the request is
-          pointing at something else.</p>
-        <p lang="nb">Leadbot kaster leads som ville sett bra ut på et dashbord, fordi en
-          bedrift med fungerende nettside ikke er en kunde. Blurt lar deg ikke redigere
-          et innlegg i etterkant. Study Hub nekter å oppbevare dataene dine noe annet
-          sted enn på din egen disk.</p>
-        <p lang="nb">I hvert tilfelle er begrensningen det som selges. Når en kunde ber
-          meg myke opp en av dem, fortjener det en ekte samtale og ikke en
-          avkrysningsboks – som regel er begrensningen bærende, og ønsket peker på noe
-          annet.</p>
-      </div>
-    </div>
+<!-- ─── about ──────────────────────────────────────────────────── -->
+<section id="about">
+  <h2 class="sec"><span lang="en">About me</span><span lang="nb">Om meg</span></h2>
 
-    <div class="principle">
-      <p class="idx">iii</p>
-      <div>
-        <h3 lang="en">It has to run when nobody is watching</h3>
-        <h3 lang="nb">Det må gå når ingen ser på</h3>
-        <p lang="en">Software that needs a person to babysit it has not been finished,
-          it has been demonstrated. Leadbot runs on a timer and publishes its own
-          status page. Time Heist can answer a playtest note and open a pull request
-          overnight. Study Hub starts its own daemon.</p>
-        <p lang="en">The corollary matters just as much: the switches that could do
-          harm unattended — sending real email without approval, raising send volume,
-          merging to main — are deliberately left off, and documented as off. Knowing
-          which parts to automate means knowing which parts not to.</p>
-        <p lang="nb">Programvare som trenger en barnevakt er ikke ferdig, den er
-          demonstrert. Leadbot går på en timer og publiserer sin egen statusside. Time
-          Heist kan svare på et spilltestnotat og åpne en pull request over natta.
-          Study Hub starter sin egen daemon.</p>
-        <p lang="nb">Konsekvensen betyr like mye: bryterne som kan gjøre skade uten
-          tilsyn – å sende ekte e-post uten godkjenning, å øke sendevolum, å flette til
-          main – står bevisst av, og er dokumentert som av. Å vite hva som skal
-          automatiseres er å vite hva som ikke skal.</p>
-      </div>
-    </div>
-  </section>
+  <p class="closing" lang="en">I study medical sciences in Oslo, live between Oslo and
+    Bergen, and work in three languages.</p>
+  <p class="closing" lang="nb">Jeg studerer medisinske fag i Oslo, bor mellom Oslo og
+    Bergen, og jobber på tre språk.</p>
 
-  <!-- ─── also ─────────────────────────────────────────────────── -->
-  <section id="also">
-    <h2 class="sec"><span lang="en">Also built</span><span lang="nb">Også bygget</span></h2>
-    <p class="also-lede" lang="en">Smaller things, mostly for my own desk. They are here
-      because a workshop tells you more about a person than a showroom does.</p>
-    <p class="also-lede" lang="nb">Mindre ting, stort sett til mitt eget skrivebord. De
-      står her fordi et verksted sier mer om en person enn et utstillingsvindu gjør.</p>
-    <ul class="also">
-      <li><b>splash</b><span lang="en">An animated terminal intro — rain and a lava lamp — that hands off into a system summary.</span><span lang="nb">En animert terminalintro – regn og en lavalampe – som gir stafettpinnen til en systemoversikt.</span></li>
-      <li><b>pulse</b><span lang="en">The same renderer driven by whatever is playing, with automatic gain so quiet tracks still move it.</span><span lang="nb">Samme renderer drevet av det som spilles, med automatisk forsterkning så stille låter fortsatt beveger den.</span></li>
-      <li><b>waybar + dunst</b><span lang="en">A status bar and notification theme sharing one material and one rule: colour is a state signal, never decoration.</span><span lang="nb">En statuslinje og et varseltema med samme materiale og én regel: farge er et tilstandssignal, aldri pynt.</span></li>
-      <li><b>sddm</b><span lang="en">A login screen whose palette is regenerated from the current wallpaper, so the machine looks like one designed object from boot.</span><span lang="nb">En innloggingsskjerm der paletten genereres på nytt fra gjeldende bakgrunn, så maskinen ser ut som ett designet objekt fra oppstart.</span></li>
-      <li><b>ntfy + systemd</b><span lang="en">Long-running jobs that text my phone when they finish, and a queue I can text back.</span><span lang="nb">Langtkjørende jobber som sender melding til telefonen når de er ferdige, og en kø jeg kan sende melding tilbake til.</span></li>
-    </ul>
-  </section>
+  <div class="prose about-lede">
+    <p lang="en">In a lab you do not get to publish a result because it looked right — you
+      show the measurement. That is the standard I hold software to.</p>
+    <p lang="nb">På et laboratorium får du ikke publisere et resultat fordi det så riktig ut
+      – du viser målingen. Det er standarden jeg holder programvare til.</p>
+  </div>
+
+  <!-- Broken into blocks rather than prose: these are the things a client
+       checks before they read anything, so they should be scannable. -->
+  <div class="blocks">
+
+    <section class="block block-wide">
+      <h3 class="block-h"><span lang="en">Languages I work in</span><span lang="nb">Språk jeg tilbyr</span></h3>
+      <ul class="lang">
+        <li>
+          <span class="lang-n">Norsk</span>
+          <span class="lang-l"><span lang="en">Fluent</span><span lang="nb">Flytende</span></span>
+          <span class="lang-u" lang="en">Everything a customer reads — the site, the emails, the quote.</span>
+          <span class="lang-u" lang="nb">Alt en kunde leser – siden, e-postene, tilbudet.</span>
+        </li>
+        <li>
+          <span class="lang-n">English</span>
+          <span class="lang-l"><span lang="en">Fluent</span><span lang="nb">Flytende</span></span>
+          <span class="lang-u" lang="en">Code, commits and documentation, so whoever picks the project up next is not locked out.</span>
+          <span class="lang-u" lang="nb">Kode, commit-meldinger og dokumentasjon, så den som overtar prosjektet ikke blir stengt ute.</span>
+        </li>
+        <li>
+          <span class="lang-n">Русский</span>
+          <span class="lang-l"><span lang="en">Fluent</span><span lang="nb">Flytende</span></span>
+          <span class="lang-u" lang="en">More than once the reason a conversation happened at all.</span>
+          <span class="lang-u" lang="nb">Mer enn én gang grunnen til at samtalen skjedde i det hele tatt.</span>
+        </li>
+      </ul>
+      <p class="block-note" lang="en">This page itself ships in two of them — that is what the EN/NO switch reads.</p>
+      <p class="block-note" lang="nb">Denne siden finnes selv på to av dem – det er det EN/NO-bryteren leser.</p>
+    </section>
+
+    <section class="block">
+      <h3 class="block-h"><span lang="en">Where I am</span><span lang="nb">Hvor jeg er</span></h3>
+      <dl class="rows">
+        <div>
+          <dt>Oslo</dt>
+          <dd lang="en">Studying medical sciences</dd><dd lang="nb">Studerer medisinske fag</dd>
+        </div>
+        <div>
+          <dt>Bergen</dt>
+          <dd lang="en">The other half of the time</dd><dd lang="nb">Den andre halvparten av tiden</dd>
+        </div>
+        <div>
+          <dt lang="en">Remote</dt><dt lang="nb">Eksternt</dt>
+          <dd lang="en">All of Norway · CET / CEST</dd><dd lang="nb">Hele Norge · CET / CEST</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="block">
+      <h3 class="block-h"><span lang="en">What I take on</span><span lang="nb">Hva jeg tar på meg</span></h3>
+      <ul class="ticks">
+        <li lang="en">Websites for small businesses</li><li lang="nb">Nettsider for småbedrifter</li>
+        <li lang="en">Internal tools and automation</li><li lang="nb">Interne verktøy og automatisering</li>
+        <li lang="en">Mobile and web apps</li><li lang="nb">Mobil- og webapper</li>
+        <li lang="en">Game systems and build tooling</li><li lang="nb">Spillsystemer og byggeverktøy</li>
+      </ul>
+      <p class="block-note" lang="en">If a job needs a team of six I am the wrong person, and I would rather say so in the first email than in the third month.</p>
+      <p class="block-note" lang="nb">Krever jobben et team på seks, er jeg feil person – og det sier jeg heller i den første e-posten enn i den tredje måneden.</p>
+    </section>
+
+    <section class="block block-wide">
+      <h3 class="block-h"><span lang="en">Availability</span><span lang="nb">Kapasitet</span></h3>
+      <p class="block-live live"><span lang="en">Taking freelance work</span><span lang="nb">Tar oppdrag nå</span></p>
+      <dl class="rows">
+        <div>
+          <dt lang="en">How</dt><dt lang="nb">Hvordan</dt>
+          <dd lang="en">Remote, or on site in Oslo and Bergen</dd>
+          <dd lang="nb">Eksternt, eller på plass i Oslo og Bergen</dd>
+        </div>
+        <div>
+          <dt lang="en">Elsewhere</dt><dt lang="nb">Ellers</dt>
+          <dd>
+            <a href="https://www.linkedin.com/in/cemen-bakin-1b6396342/" rel="me noopener">LinkedIn</a>
+            &middot;
+            <a href="https://github.com/CemenBakinDev" rel="me noopener">GitHub</a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+  </div>
+</section>
+
+<!-- ─── method ─────────────────────────────────────────────────── -->
+<section id="method">
+  <h2 class="sec"><span lang="en">How I work</span><span lang="nb">Slik jobber jeg</span></h2>
+
+  <ol class="creed">
+    <li>
+      <h3 lang="en">Verify before you claim</h3>
+      <h3 lang="nb">Sjekk før du påstår</h3>
+      <p lang="en">A check that quietly failed, promoted into a claim — that is the shape
+        of every bug that has actually mattered in my work.</p>
+      <p lang="nb">En sjekk som stille feilet, forfremmet til en påstand – det er formen
+        på hver feil som virkelig har betydd noe i arbeidet mitt.</p>
+    </li>
+    <li>
+      <h3 lang="en">The constraint is the product</h3>
+      <h3 lang="nb">Begrensningen er produktet</h3>
+      <p lang="en">Leadbot throws away leads that would look good on a dashboard. Blurt
+        will not let you edit. The restriction is the thing being sold.</p>
+      <p lang="nb">Leadbot kaster leads som ville sett bra ut på et dashbord. Blurt lar deg
+        ikke redigere. Begrensningen er det som selges.</p>
+    </li>
+    <li>
+      <h3 lang="en">It has to run unattended</h3>
+      <h3 lang="nb">Det må gå uten tilsyn</h3>
+      <p lang="en">Software that needs a person to babysit it has not been finished. It
+        has been demonstrated.</p>
+      <p lang="nb">Programvare som trenger en barnevakt er ikke ferdig. Den er
+        demonstrert.</p>
+    </li>
+  </ol>
+</section>
+
 </main>
 
 <footer id="contact">
   <h2 class="sec"><span lang="en">Contact</span><span lang="nb">Kontakt</span></h2>
-  <p class="closing" lang="en">If you have something that needs building — or something
-    that already exists and needs to be made trustworthy — write to me. Tell me what
-    the job actually is; I will tell you honestly whether I am the right person for it.</p>
-  <p class="closing" lang="nb">Har du noe som må bygges – eller noe som allerede finnes
-    og må bli til å stole på – så skriv til meg. Fortell meg hva jobben faktisk er, så
-    sier jeg ærlig fra om jeg er rett person for den.</p>
+  <div class="prose">
+    <p class="closing" lang="en">If you have something that needs building — or something
+      that already exists and needs to be made trustworthy — write to me. Tell me what
+      the job actually is; I will tell you honestly whether I am the right person for it.</p>
+    <p class="closing" lang="nb">Har du noe som må bygges – eller noe som allerede finnes
+      og må bli til å stole på – så skriv til meg. Fortell meg hva jobben faktisk er, så
+      sier jeg ærlig fra om jeg er rett person for den.</p>
+  </div>
 
   <ul class="links">
     <li>
@@ -531,23 +1002,37 @@
       <a href="https://github.com/CemenBakinDev" rel="me noopener">CemenBakinDev</a>
     </li>
     <li>
+      <span class="k">LinkedIn</span>
+      <a href="https://www.linkedin.com/in/cemen-bakin-1b6396342/" rel="me noopener">Cemen Bakin</a>
+    </li>
+    <li>
       <span class="k" lang="en">Location</span><span class="k" lang="nb">Sted</span>
-      <span>Oslo, <span lang="en">Norway</span><span lang="nb">Norge</span> · CET</span>
+      <span>Oslo &amp; Bergen, <span lang="en">Norway</span><span lang="nb">Norge</span> · CET</span>
+    </li>
+    <li>
+      <span class="k" lang="en">Languages</span><span class="k" lang="nb">Språk</span>
+      <span lang="en">Norwegian, English and Russian</span>
+      <span lang="nb">Norsk, engelsk og russisk</span>
     </li>
   </ul>
 
-  <p class="colophon" lang="en">Set in Fraunces, Instrument Sans and JetBrains Mono.
-    Hand-written HTML and CSS — no framework, no build step, no tracking. Every
-    screenshot is of software that runs; the Leadbot shot uses that tool&rsquo;s own demo
-    data rather than a client&rsquo;s.</p>
-  <p class="colophon" lang="nb">Satt i Fraunces, Instrument Sans og JetBrains Mono.
+  <p class="colophon" lang="en">Set in Instrument Serif, Schibsted Grotesk and IBM Plex
+    Mono. There is no accent colour anywhere on this page: every colour you have seen
+    belongs to the work being shown. Hand-written HTML and CSS — no framework, no build
+    step, no tracking. Every screenshot is of a site or a tool that runs; the two client
+    sites are linked so you can check them, and the Leadbot shot uses that tool&rsquo;s
+    own demo data rather than a client&rsquo;s.</p>
+  <p class="colophon" lang="nb">Satt i Instrument Serif, Schibsted Grotesk og IBM Plex
+    Mono. Siden har ingen aksentfarge: all farge du har sett tilhører arbeidet som vises.
     Håndskrevet HTML og CSS – uten rammeverk, uten byggesteg, uten sporing. Hver
-    skjermdump viser programvare som kjører; Leadbot-bildet bruker verktøyets egne
-    demodata, ikke en kundes.</p>
+    skjermdump viser en side eller et verktøy som kjører; de to klientsidene er lenket
+    så du kan sjekke dem, og Leadbot-bildet bruker verktøyets egne demodata, ikke en
+    kundes.</p>
 </footer>
 
 </div><!-- /.sheet -->
 
+<script src="hero.js" defer></script>
 <script src="main.js" defer></script>
 </body>
 </html>
