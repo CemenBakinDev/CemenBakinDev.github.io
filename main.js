@@ -210,20 +210,31 @@
         if (b) b.classList.remove("is-open");
       };
 
+      var openBio = function (btn) {
+        var b = document.getElementById(btn.getAttribute("aria-controls"));
+        if (!b) return;
+        lines.forEach(shutBio);
+        btn.setAttribute("aria-expanded", "true");
+        /* restart the stagger even when the same panel is reopened */
+        b.classList.remove("is-open");
+        void b.offsetWidth;
+        b.classList.add("is-open");
+      };
+
       lines.forEach(function (btn) {
         btn.addEventListener("click", function () {
-          var wasOpen = btn.getAttribute("aria-expanded") === "true";
-          lines.forEach(shutBio);
-          if (wasOpen) return;
-          var b = document.getElementById(btn.getAttribute("aria-controls"));
-          if (!b) return;
-          btn.setAttribute("aria-expanded", "true");
-          /* restart the stagger even if the same panel is reopened */
-          b.classList.remove("is-open");
-          void b.offsetWidth;
-          b.classList.add("is-open");
+          if (btn.getAttribute("aria-expanded") === "true") { shutBio(btn); return; }
+          openBio(btn);
         });
       });
+
+      /* The Norwegian line is open on arrival: the clients this page is for
+         are Norwegian, and a section whose whole point is "pick one" should
+         not open showing nothing picked. */
+      var first = lines.filter(function (b) {
+        return b.getAttribute("lang") === "nb";
+      })[0] || lines[0];
+      if (first) openBio(first);
 
       tongues.addEventListener("keydown", function (e) {
         if (e.key !== "Escape") return;
