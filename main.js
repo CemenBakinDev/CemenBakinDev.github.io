@@ -106,15 +106,21 @@
       if (total) total.textContent = String(n);
       if (count) count.textContent = String(page());
 
+      /* aria-disabled rather than disabled: a keyboard user paging to the end
+         would otherwise have the focused button disabled underneath them, and
+         the browser hands focus back to <body>. The click handler no-ops
+         instead, so the button stays focusable and Tab order survives. */
       var atStart = track.scrollLeft <= 4;
       var atEnd = track.scrollLeft >= track.scrollWidth - track.clientWidth - 4;
       btns.forEach(function (b) {
-        b.disabled = b.dataset.track === "prev" ? atStart : atEnd;
+        b.setAttribute("aria-disabled",
+          String(b.dataset.track === "prev" ? atStart : atEnd));
       });
     }
 
     btns.forEach(function (b) {
       b.addEventListener("click", function () {
+        if (b.getAttribute("aria-disabled") === "true") return;
         var dir = b.dataset.track === "next" ? 1 : -1;
         track.scrollBy({ left: dir * track.clientWidth,
                          behavior: reduced.matches ? "auto" : "smooth" });

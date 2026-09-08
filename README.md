@@ -45,9 +45,10 @@ a card — that is what keeps the evidence reading as the point.
 
 **A new project.** Two pieces go together: an `<a class="pcard">` in the section's
 `.track`, and a `<div class="detail" id="d-NAME">` in its `.details`. The card's
-`data-detail` must match the panel's `id`. Bump the total in `.track-count`.
-A website also needs a desktop shot and a phone shot — capture both with the
-headless Chromium recipe below, at 1440×900 and 390×844.
+`data-detail` must match the panel's `id`. Nothing needs counting by hand — the
+`data-total` in `.track-count` is a placeholder `main.js` overwrites on every
+`sync()`. A website also needs a desktop shot and a phone shot — capture both
+with the headless Chromium recipe below, at 1440×900 and 390×844.
 
 **The two rows.** Each is a plain scroll container with `scroll-snap-type: x`,
 not a hijacked wheel: scrolling down the page always scrolls down. Three rules
@@ -75,19 +76,22 @@ Do not try to animate the panel's height with the `grid-template-rows: 0fr → 1
 trick. It was tried and it resolves to zero here: the free space in an
 auto-height grid is zero, and `overflow: hidden` takes the item's automatic
 minimum down with it, so the panel opened to exactly its own padding — 33px, with
-the content clipped and no error anywhere. The panel shows or it does not, with a
-short fade.
+the content clipped and no error anywhere. The panel shows or it does not, and
+the reveal animates `transform` only — never `opacity`, so an animation that
+stalls at its first frame cannot leave a panel present, at full height, and
+invisible.
 
 **The opening field.** `hero.js` draws seven ridges — Bergen is the city between
 the seven mountains — from seeded value noise, so the skyline is identical on
-every visit. It reads `--ground` to pick its palette, so it follows the theme
+every visit. It picks its palette by measuring the ground's brightness (not by
+matching a hex string, which broke silently when the token changed), so it
+follows the theme
 switch; it pauses when the hero scrolls out of view or the tab is hidden, and it
 draws one still frame under `prefers-reduced-motion`. It is decoration: the
 canvas is `aria-hidden` and the page is complete without it.
 
-**A new software project.** Copy an `<article class="case">`, give it a new `id`,
-and fill in the `.specs` strip. Projects are not numbered: five of them are not a
-sequence, so the order carries no meaning the reader needs.
+Projects are not numbered: five of them are not a sequence, so the order
+carries no meaning the reader needs.
 
 **Client credit.** The website cases credit `Studio: SoulScaler` and claim no
 individual role, because the studio credit is verifiable from soulscaler.no and

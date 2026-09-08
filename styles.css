@@ -345,8 +345,6 @@ h1 {
 .prose > p { margin: 1.5rem 0 0; text-wrap: pretty; }
 .prose > p:first-child { margin-top: 0; }
 
-section, footer { scroll-margin-top: calc(var(--bar-h) + 1rem); }
-
 .sec {
   margin: 0 0 clamp(1.5rem, 4vh, 2.25rem);
   padding-top: clamp(4rem, 11vh, 7rem);
@@ -417,8 +415,8 @@ section, footer { scroll-margin-top: calc(var(--bar-h) + 1rem); }
   cursor: pointer;
   transition: color .2s ease, border-color .2s ease, opacity .2s ease;
 }
-.tbtn:hover:not(:disabled) { color: var(--ink); border-color: var(--ink-3); }
-.tbtn:disabled { opacity: .3; cursor: default; }
+.tbtn:hover:not([aria-disabled="true"]) { color: var(--ink); border-color: var(--ink-3); }
+.tbtn[aria-disabled="true"] { opacity: .3; cursor: default; }
 
 .track {
   /* The inset lines the first card up with the section heading above it, and
@@ -787,7 +785,7 @@ details > div { padding-bottom: .5rem; }
   gap: clamp(1.25rem, 3vw, 2.5rem);
   margin: clamp(1.75rem, 4vh, 2.5rem) 0 0;
 }
-.figs > div { display: flex; flex-direction: column-reverse; gap: .35rem; }
+.figs > div { display: flex; flex-direction: column; gap: .35rem; }
 
 .fig-n {
   margin: 0;
@@ -946,10 +944,11 @@ details > div { padding-bottom: .5rem; }
   font-size: .95rem;
   color: var(--ink-2);
 }
-.ticks li:first-of-type { border-top: none; padding-top: 0; }
-/* the hidden language's items must not leave a stray rule behind */
-[data-lang="en"] .ticks li[lang="en"]:first-of-type,
-[data-lang="nb"] .ticks li[lang="nb"]:first-of-type { border-top: none; padding-top: 0; }
+/* Each item carries both languages, so the first item is genuinely the first
+   child in either. Selecting it by :first-of-type instead would silently fail:
+   :first-of-type is positional and ignores the attribute filter, so
+   li[lang="nb"]:first-of-type never matched anything. */
+.ticks li:first-child { border-top: none; padding-top: 0; }
 
 /* --- footer -------------------------------------------------------------- */
 
@@ -1059,7 +1058,6 @@ a:hover { text-decoration-thickness: 2px; }
   .specs dt, .links .k { font-size: 5.6pt; margin-bottom: 2pt; }
   .specs dd { font-size: 7.8pt; }
   .detail .prose { margin-top: 4pt; }
-  .prose > p:not(.fact) { display: none; }
   .fact {
     margin-top: 5pt; font-size: 8.2pt;
     border-left: 1pt solid var(--ink); padding-left: 6pt;
@@ -1067,7 +1065,7 @@ a:hover { text-decoration-thickness: 2px; }
   .chips { gap: 2pt; }
   .chips li { font-size: 5.8pt; padding: 1.5pt 2.5pt; }
 
-  .about-lede > p { display: block; font-size: 8.2pt; margin-top: 3pt; }
+  .about-lede > p { font-size: 8.2pt; margin-top: 3pt; }
   .blocks {
     display: grid; grid-template-columns: 1fr 1fr; gap: 0 18pt;
     background: none; border: none; border-radius: 0; margin-top: 6pt;

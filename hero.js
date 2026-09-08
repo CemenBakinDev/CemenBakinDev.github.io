@@ -21,6 +21,7 @@
   var LAYERS = 7;
   var W = 0, H = 0, dpr = 1;
   var running = false, raf = 0;
+  var onScreen = true, tabVisible = true;
 
   /* --- value noise -------------------------------------------------------
      A seeded 1-D noise, smoothed and stacked into a few octaves. Seeded so
@@ -48,12 +49,22 @@
 
   /* --- palette -----------------------------------------------------------
      Read from the stylesheet rather than hard-coded, so the ridges follow the
-     theme switch instead of keeping their own private colours. */
+     theme switch instead of keeping their own private colours.
+
+     Which theme is on is decided by measuring the ground's brightness, not by
+     matching a hex string: comparing against a literal "#0a0a0b" broke
+     silently the moment the token was edited, and the ridges fell back to the
+     light palette on a dark page with nothing to show for it. */
+
+  function isDark() {
+    var bg = getComputedStyle(document.body).backgroundColor;
+    var m = (bg || "").match(/[\d.]+/g);
+    if (!m) return true;
+    return (0.2126 * m[0] + 0.7152 * m[1] + 0.0722 * m[2]) / 255 < 0.5;
+  }
 
   function palette() {
-    var cs = getComputedStyle(root);
-    var dark = cs.getPropertyValue("--ground").trim().toLowerCase() === "#0a0a0b";
-    return dark
+    return isDark()
       ? { back: [26, 26, 30], front: [8, 8, 10], haze: [255, 255, 255] }
       : { back: [196, 198, 204], front: [246, 246, 248], haze: [255, 255, 255] };
   }
@@ -114,8 +125,11 @@
     if (running) raf = requestAnimationFrame(frame);
   }
 
+  /* Both conditions have to hold. Starting on whichever event fired last let
+     a tab switch restart the loop over a canvas that was scrolled out of
+     view, which is exactly what the pausing exists to avoid. */
   function start() {
-    if (running || still.matches) return;
+    if (running || still.matches || !onScreen || !tabVisible) return;
     running = true;
     raf = requestAnimationFrame(frame);
   }
@@ -144,7 +158,8 @@
   }, { passive: true });
 
   document.addEventListener("visibilitychange", function () {
-    if (document.hidden) stop(); else start();
+    tabVisible = !document.hidden;
+    if (tabVisible) start(); else stop();
   });
 
   /* Redraw on a theme change: the palette is read from the stylesheet, so the
@@ -156,7 +171,8 @@
 
   if ("IntersectionObserver" in window) {
     new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) start(); else stop();
+      onScreen = entries[0].isIntersecting;
+      if (onScreen) start(); else stop();
     }, { threshold: 0 }).observe(canvas);
   } else {
     start();
