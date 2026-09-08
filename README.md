@@ -4,7 +4,7 @@ A single hand-written page. No framework, no build step, no tracking: what is
 in this directory is exactly what gets served.
 
 ```
-index.html        the opening, the two doors, about, contact
+index.html        the opening, the two doors, the languages, the closing
 nettsider.html    the client websites
 programvare.html  the software
 styles.css        tokens, layout, and the print stylesheet
@@ -166,6 +166,20 @@ panel present, at full height, and invisible — with no error anywhere.
 buttons that do nothing — worse than no controls, since the row still scrolls
 by touch and trackpad. The same rule is why the panels are open by default:
 the enhancement collapses, it never reveals.
+
+**The home page is four beats and nothing else.** The opening field, two
+doors, the three languages, and a closing field with the address on it. What
+used to sit between them — an about grid, a three-part method essay, a column
+of contact rows — was the same shape repeated six times down the page: mono
+label, hairline, block. That repetition is both what makes a page read as
+generated and what buries the one thing a visitor came to find. It is all in
+git history if any of it is wanted back.
+
+**The page ends where it began.** `.field` is the same ridge canvas as the
+hero, flipped, with the address set larger than anything except the name.
+`hero.js` therefore runs per canvas rather than once — the profiles are shared,
+but the backing store and gradients belong to each field, and a field only
+animates while it is on screen, so the two never both run.
 
 **The three languages are shown, not claimed.** `#tongues` prints the same
 sentence in Norwegian, English and Russian, and it is the one block that

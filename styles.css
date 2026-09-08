@@ -432,13 +432,83 @@ main, .hero-in, .hero-foot {
   margin-right: .1em;
 }
 
+
+/* --- the closing field ---------------------------------------------------
+   The page ends the way it began. Everything that used to sit here — an about
+   grid, a method essay, a column of contact rows — was the same shape repeated
+   six times down the page, which is both what makes a page feel generated and
+   what buries the one thing a visitor came to find. This is that one thing. */
+
+.field {
+  position: relative;
+  min-height: min(78vh, 40rem);
+  margin-inline: calc(50% - 50vw);
+  padding: clamp(4rem, 12vh, 7rem) var(--gutter);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  isolation: isolate;
+  border-top: 1px solid var(--line);
+  overflow: hidden;
+}
+.field::after {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background-image: var(--grain);
+  background-size: 200px 200px;
+  opacity: .16;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+:root[data-theme="light"] .field::after { opacity: .1; mix-blend-mode: multiply; }
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) .field::after { opacity: .1; mix-blend-mode: multiply; }
+}
+
+.field-in { position: relative; display: grid; gap: clamp(1rem, 3vh, 1.75rem); }
+
+.field-status {
+  margin: 0;
+  font: 400 .7rem/1 var(--mono);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+}
+.field-status::before { vertical-align: .08em; }
+
+/* The address is the largest thing on the page after the name. It is the
+   whole point of the page, so it is allowed to be. */
+.mailto {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.75rem, 6.5vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -.02em;
+  color: var(--ink);
+  text-decoration: none;
+  word-break: break-word;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: .12em;
+  transition: border-color .25s ease;
+}
+.mailto:hover { border-bottom-color: var(--ink); }
+
+.field-meta {
+  margin: 0;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem .75rem;
+  font-size: .92rem;
+  color: var(--ink-3);
+}
+.field-meta a { color: var(--ink-2); }
+.field-meta a:hover { color: var(--ink); }
+
 /* --- the three languages -------------------------------------------------
    Shown, not claimed. This is the one block on the page that ignores the
    EN/NO switch on purpose: all three lines are always visible, because the
    point is that all three exist. */
 
 #tongues {
-  padding-top: clamp(3rem, 8vh, 4.5rem);
+  padding: clamp(4rem, 11vh, 6.5rem) 0 clamp(4rem, 11vh, 6.5rem);
   display: grid;
   gap: .1rem;
 }
@@ -454,6 +524,12 @@ main, .hero-in, .hero-foot {
   transition: color .3s ease;
 }
 .tongue:hover { color: var(--ink); }
+
+.tongue-note {
+  margin: clamp(1.25rem, 3vh, 2rem) 0 0;
+  font-size: .92rem;
+  color: var(--ink-3);
+}
 /* the line matching the language you are reading the site in leads */
 [data-lang="en"] .tongue[lang="en"],
 [data-lang="nb"] .tongue[lang="nb"] { color: var(--ink); }
@@ -1127,7 +1203,7 @@ a:hover { text-decoration-thickness: 2px; }
   @page { margin: 14mm 13mm; }
 
   .topbar, .skip, details, figure, .stage, .cue, .ridge, .colophon,
-  .doors { display: none !important; }
+  .doors, .field::after, .field .ridge { display: none !important; }
 
   body { font-size: 9pt; line-height: 1.4; background: #fff; overflow: visible; }
   .sheet { padding: 0; max-width: none; }
@@ -1136,6 +1212,15 @@ a:hover { text-decoration-thickness: 2px; }
   main, .hero-in, .hero-foot { animation: none !important; }
   #tongues { padding-top: 8pt; }
   .tongue { font-size: 9pt; color: #000; }
+  .tongue-note { font-size: 7.8pt; }
+  .field {
+    min-height: 0; margin-inline: 0; padding: 8pt 0 0; display: block;
+    text-align: left; border-top: 1px solid var(--line-2); break-inside: avoid;
+  }
+  .field-in { display: block; }
+  .field-status { font-size: 5.6pt; }
+  .mailto { font-size: 13pt; border: 0; }
+  .field-meta { display: block; font-size: 8pt; margin-top: 3pt; }
   .hero { min-height: 0 !important; padding: 0 0 8pt; border-bottom: none; display: block; }
   .hero::before, .hero::after { content: none; }
   .hero-in { text-align: left; }

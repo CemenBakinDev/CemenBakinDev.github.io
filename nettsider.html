@@ -31,8 +31,7 @@
     <nav class="secnav" aria-label="Sections">
       <a href="nettsider.html" aria-current="page"><span lang="en">Websites</span><span lang="nb">Nettsider</span></a>
       <a href="programvare.html"><span lang="en">Software</span><span lang="nb">Programvare</span></a>
-      <a href="index.html#about"><span lang="en">About</span><span lang="nb">Om meg</span></a>
-      <a href="index.html#contact"><span lang="en">Contact</span><span lang="nb">Kontakt</span></a>
+      <a href="#contact"><span lang="en">Contact</span><span lang="nb">Kontakt</span></a>
     </nav>
 
     <div class="controls">
@@ -216,57 +215,28 @@
 
 </main>
 
-<footer id="contact">
-  <h2 class="sec"><span lang="en">Contact</span><span lang="nb">Kontakt</span></h2>
-  <div class="prose">
-    <p class="closing" lang="en">If you have something that needs building — or something
-      that already exists and needs to be made trustworthy — write to me. Tell me what
-      the job actually is; I will tell you honestly whether I am the right person for it.</p>
-    <p class="closing" lang="nb">Har du noe som må bygges – eller noe som allerede finnes
-      og må bli til å stole på – så skriv til meg. Fortell meg hva jobben faktisk er, så
-      sier jeg ærlig fra om jeg er rett person for den.</p>
+<!-- The page closes the way it opened: the same ridges, turned over, with
+     the one thing a visitor actually needs on top of them. Everything that
+     used to sit here — an about grid, a method essay, a list of contact rows —
+     said more and sold less. -->
+<section class="field" id="contact">
+  <canvas class="ridge" aria-hidden="true"></canvas>
+  <div class="field-in">
+    <p class="field-status live"><span lang="en">Taking work now</span><span lang="nb">Tar oppdrag nå</span></p>
+    <a class="mailto" href="mailto:2highup@protonmail.com">2highup@protonmail.com</a>
+    <p class="field-meta">
+      <span>Oslo &amp; Bergen</span>
+      <span aria-hidden="true">·</span>
+      <a href="https://www.linkedin.com/in/cemen-bakin-1b6396342/" rel="me noopener">LinkedIn</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://github.com/CemenBakinDev" rel="me noopener">GitHub</a>
+    </p>
   </div>
-
-  <ul class="links">
-    <li>
-      <span class="k" lang="en">Email</span><span class="k" lang="nb">E-post</span>
-      <a href="mailto:2highup@protonmail.com">2highup@protonmail.com</a>
-    </li>
-    <li>
-      <span class="k">GitHub</span>
-      <a href="https://github.com/CemenBakinDev" rel="me noopener">CemenBakinDev</a>
-    </li>
-    <li>
-      <span class="k">LinkedIn</span>
-      <a href="https://www.linkedin.com/in/cemen-bakin-1b6396342/" rel="me noopener">Cemen Bakin</a>
-    </li>
-    <li>
-      <span class="k" lang="en">Location</span><span class="k" lang="nb">Sted</span>
-      <span>Oslo &amp; Bergen, <span lang="en">Norway</span><span lang="nb">Norge</span> · CET</span>
-    </li>
-    <li>
-      <span class="k" lang="en">Languages</span><span class="k" lang="nb">Språk</span>
-      <span lang="en">Norwegian, English and Russian</span>
-      <span lang="nb">Norsk, engelsk og russisk</span>
-    </li>
-  </ul>
-
-  <p class="colophon" lang="en">Set in Instrument Serif, Schibsted Grotesk and IBM Plex
-    Mono. There is no accent colour anywhere on this page: every colour you have seen
-    belongs to the work being shown. Hand-written HTML and CSS — no framework, no build
-    step, no tracking. Every screenshot is of a site or a tool that runs; the two client
-    sites are linked so you can check them, and the Leadbot shot uses that tool&rsquo;s
-    own demo data rather than a client&rsquo;s.</p>
-  <p class="colophon" lang="nb">Satt i Instrument Serif, Schibsted Grotesk og IBM Plex
-    Mono. Siden har ingen aksentfarge: all farge du har sett tilhører arbeidet som vises.
-    Håndskrevet HTML og CSS – uten rammeverk, uten byggesteg, uten sporing. Hver
-    skjermdump viser en side eller et verktøy som kjører; de to klientsidene er lenket
-    så du kan sjekke dem, og Leadbot-bildet bruker verktøyets egne demodata, ikke en
-    kundes.</p>
-</footer>
+</section>
 
 </div><!-- /.sheet -->
 
+<script src="hero.js" defer></script>
 <script src="main.js" defer></script>
 </body>
 </html>
