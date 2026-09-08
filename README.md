@@ -119,13 +119,26 @@ must come from that tool's `rapport --demo` output, which uses invented
 businesses — never from `oversikt.html`, which holds real leads, and never
 including the page footer, which carries the client's registered address.
 
-**Numbers instead of paragraphs.** Each project panel leads with a `.figs` row —
-two to three large figures with a mono label. This is the page's own argument
-applied to itself: it claims a result should be a number rather than an
-adjective, so the numbers are the loudest thing in a panel after the image.
+**Numbers instead of paragraphs.** Each project panel leads with a `.count`
+sentence — one line where the numerals are set large in the serif and the words
+stay at reading size. This is the page's own argument applied to itself: it
+claims a result should be a number rather than an adjective.
+
+It went through a stat row first — big numeral over a small uppercase label,
+three across — and that was a mistake worth recording. A row of tiles like that
+is one of the most generated components on the web, and it read worst exactly
+where it mattered: Study Hub showed "0 DEPENDENCIES" beside "0 ACCOUNTS", two
+zeroes side by side filling a template instead of saying anything. As a
+sentence, "3 front-ends, 1 daemon, 0 dependencies, 0 accounts" is a claim.
+
 Every figure must be checkable against the project's own output. Do not round
-one up to make it look better, and do not invent one to fill the row — a row of
-two is fine. The explanatory prose lives in the `<details>` under it.
+one up to look better, and do not invent one to balance the line. The
+explanatory prose lives in the `<details>` under it.
+
+**No "read more" on the cards.** The whole card is the link; an arrow and a
+label inside it are furniture, and that pattern — screenshot, title, mono
+subtitle, "Read more →" — is the stock generated card. The open state is
+carried by the border.
 
 **Motion must never be able to hide content.** Two rules, both learned by
 shipping the bug: the panel's height is not interpolated (the

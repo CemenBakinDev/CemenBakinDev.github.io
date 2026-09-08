@@ -450,13 +450,14 @@ h1 {
 
 .pcard {
   flex: 0 0 min(78vw, 19rem);
+  /* no "read more" line: the whole card is the link, and the arrow was
+     furniture. The open state is carried by the border instead. */
   /* #sites overrides this below: the two client sites are the sales argument,
      so they get the bigger card and the row that visibly runs off the edge. */
   scroll-snap-align: start;
   display: grid;
-  grid-template-rows: auto auto 1fr;
-  gap: .9rem;
-  padding: .75rem .75rem 1rem;
+  gap: .85rem;
+  padding: .75rem .75rem 1.1rem;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--raise);
@@ -504,17 +505,6 @@ h1 {
   color: var(--ink-3);
 }
 
-.pcard-more {
-  align-self: end;
-  font-size: .8rem;
-  font-weight: 500;
-  color: var(--ink-2);
-  display: flex; align-items: center; gap: .4rem;
-}
-.pcard.is-open .pcard-more { color: var(--ink); }
-.pcard.is-open .pcard-more span[aria-hidden] { transform: rotate(90deg); }
-.pcard-more span[aria-hidden] { transition: transform .3s ease; }
-
 /* --- the write-up a card opens ------------------------------------------
    With the script blocked these are simply all open, which is the honest
    fallback: the enhancement collapses them, it does not reveal them. */
@@ -561,16 +551,17 @@ h1 {
 
 .detail-close { margin: clamp(2rem, 5vh, 3rem) 0 0; }
 .detail-close button {
-  font: 500 .8rem/1 var(--sans);
-  color: var(--ink-2);
+  font: 500 .85rem/1.4 var(--sans);
+  color: var(--ink-3);
   background: transparent;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: .6rem 1.1rem;
+  border: 0;
+  padding: 0;
   cursor: pointer;
-  transition: color .2s ease, border-color .2s ease;
+  text-decoration: underline;
+  text-underline-offset: .22em;
+  transition: color .2s ease;
 }
-.detail-close button:hover { color: var(--ink); border-color: var(--ink-3); }
+.detail-close button:hover { color: var(--ink); }
 
 /* Inside a panel the stage is a panel, not a full-bleed band. */
 .detail .stage {
@@ -772,36 +763,33 @@ details > div > p { margin: 1.2rem 0 0; font-size: .96rem; color: var(--ink-2); 
 details > div { padding-bottom: .5rem; }
 
 
-/* --- the figures ---------------------------------------------------------
-   These replaced the explanatory paragraph. The whole site argues that a
-   claim should be a number rather than an adjective, so the numbers are set
-   as the loudest thing in a panel after the image itself. Every one of them
-   is checkable: they come from the project's own output, not from rounding
-   something up. */
+/* --- the counts ---------------------------------------------------------
+   These replaced the explanatory paragraph, and then replaced the stat row
+   that replaced it. A big numeral over a small uppercase label, three across,
+   is the most-generated component of the last few years — and it read worst
+   exactly where it mattered, two zeroes side by side saying nothing.
 
-.figs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
-  gap: clamp(1.25rem, 3vw, 2.5rem);
+   So the numbers are a sentence that happens to open with a numeral. Same
+   figures, same checkability, but it reads as a claim rather than a
+   dashboard tile. Every one is verifiable against the project's own output. */
+
+.count {
   margin: clamp(1.75rem, 4vh, 2.5rem) 0 0;
+  max-width: 42rem;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.75;
+  color: var(--ink-2);
+  text-wrap: pretty;
 }
-.figs > div { display: flex; flex-direction: column; gap: .35rem; }
-
-.fig-n {
-  margin: 0;
+.count b {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(2.6rem, 6vw, 4rem);
-  line-height: .95;
+  font-size: 1.9em;
+  line-height: .8;
   letter-spacing: -.02em;
   color: var(--ink);
   font-variant-numeric: tabular-nums lining-nums;
-}
-.figs dt {
-  font: 400 .67rem/1.35 var(--mono);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: var(--ink-3);
+  margin-right: .03em;
 }
 
 /* --- the creed -----------------------------------------------------------
@@ -1043,9 +1031,8 @@ a:hover { text-decoration-thickness: 2px; }
   .creed h3 { font-size: 10.5pt; margin-bottom: 2pt; }
   .creed p { font-size: 8.2pt; }
   .creed li { display: block; padding: 4pt 0; }
-  .figs { gap: 10pt; margin-top: 4pt; grid-template-columns: repeat(4, 1fr); }
-  .fig-n { font-size: 14pt; }
-  .figs dt { font-size: 5.6pt; }
+  .count { margin-top: 4pt; font-size: 8.6pt; line-height: 1.5; max-width: none; }
+  .count b { font-size: 1.5em; }
   .sub { font-size: 8.6pt; margin-top: 2pt; }
   .visit { margin-top: 3pt; }
   .visit a { font-size: 8pt; }
