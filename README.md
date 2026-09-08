@@ -4,12 +4,25 @@ A single hand-written page. No framework, no build step, no tracking: what is
 in this directory is exactly what gets served.
 
 ```
-index.html    the page — both languages live in the markup
-styles.css    tokens, layout, and the print stylesheet
-hero.js       the ridges and the haze in the opening field (decoration only)
-main.js       language memory, theme memory, the bar, the websites track
-assets/       screenshots as webp, plus the favicon
+index.html        the opening, the two doors, about, contact
+nettsider.html    the client websites
+programvare.html  the software
+styles.css        tokens, layout, and the print stylesheet
+hero.js           the ridges in the opening field (index only, decoration)
+main.js           language memory, theme memory, the bar, the project rows
+assets/           screenshots as webp, plus the favicon
 ```
+
+**Three pages, no build step.** The shell — head, top bar, footer — is repeated
+in each file rather than templated. That is the cost of having no build step,
+and it is a real one: a change to the bar has to be made three times. If you
+add a fourth page, copy an existing one and change the `aria-current="page"` in
+its nav.
+
+**Moving between them** uses cross-document view transitions where the browser
+has them (`@view-transition { navigation: auto }` sits in each head) and a
+`page-in` keyframe everywhere else. As with the panel reveal, it has no fill
+mode: if the animation never runs, the content is simply there.
 
 ## Run it locally
 
@@ -154,6 +167,14 @@ buttons that do nothing — worse than no controls, since the row still scrolls
 by touch and trackpad. The same rule is why the panels are open by default:
 the enhancement collapses, it never reveals.
 
+**The three languages are shown, not claimed.** `#tongues` prints the same
+sentence in Norwegian, English and Russian, and it is the one block that
+deliberately ignores the EN/NO switch — all three lines are always visible,
+because their being there together *is* the evidence. Flags were considered and
+rejected: a flag claims a country, not a language, and "fluent" written next to
+your own name is exactly the unverifiable adjective the rest of this site
+argues against. The old table that said "Norsk — FLUENT" three times is gone.
+
 **The About blocks.** `.blocks` is a grid whose `gap: 1px` over a `--line`
 background *is* the hairline grid — there are no borders on the blocks
 themselves. That means an empty cell shows up as a grey rectangle, so the block
@@ -163,7 +184,14 @@ Add a fifth block and you have to re-check that.
 
 ## Print
 
-`⌘P` / `Ctrl+P` produces a two-page CV: each project's summary line, its
+**One caveat from the split:** `Ctrl+P` no longer prints a complete CV from one
+page. Each page prints its own part — the home page gives the summary, the
+about blocks, the method and the contact details; the two work pages print
+their projects. Printing all three gives the same document as before, in three
+passes. If a single-press CV matters more than the split, that is the thing to
+undo.
+
+`⌘P` / `Ctrl+P` produces a CV: each project's summary line, its
 specification strip and its one hard fact, without the images, the expanders or
 the long-form prose. That layout is a self-contained block at the bottom of
 `styles.css`. It prints the *About* block as two columns and forces `.specs` to
