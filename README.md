@@ -124,9 +124,10 @@ Projects are not numbered: five of them are not a sequence, so the order
 carries no meaning the reader needs.
 
 **The studio's own site is one of the three cases.** `nettsider.html` shows two
-client sites and soulscaler.no itself. Keep it last in the track: the first
-`.pcard` is the one that opens on arrival, and client work should be what greets
-a visitor. Its numbers are counted off the live page (six services, two projects,
+client sites and soulscaler.no itself, and it comes first: the first `.pcard`
+is both the leftmost one in a row that scrolls sideways and the one that opens
+on arrival, so anything placed third is off the right edge until the reader
+scrolls for it. Its numbers are counted off the live page (six services, two projects,
 one repeated action), so re-count them if that page is rebuilt.
 
 **Client credit, and the one personal role line.** The website cases still
