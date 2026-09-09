@@ -38,13 +38,47 @@
     "track-software": ["Software projects, scrolls sideways", "Programvareprosjekter, ruller sidelengs"]
   };
 
+  /* Image descriptions are the same problem as a label: one attribute, two
+     languages. They ship Norwegian and switch here. A screen reader on the
+     default page was describing the screenshots in English. */
+
+  var ALTS = {
+    "ss-desk": ["SoulScaler's home page: the headline Nettsiden selger. Systemet følger opp. in white over a dark starfield, two buttons beneath it, and the AI chat open in the corner.",
+       "SoulScalers forside: overskriften Nettsiden selger. Systemet følger opp. i hvitt over en mørk stjernehimmel, to knapper under, og AI-chatten åpen i hjørnet."],
+    "ss-mob": ["The same page on a phone, the headline stacked over four lines and the chat prompt sitting above its button.",
+       "Samme side på mobil, med overskriften stablet over fire linjer og chat-meldingen over knappen sin."],
+    "el-desk": ["Eltervåg Gruppen's home page: the headline Folk, biler og utstyr når du mangler kapasitet, beside a photograph of a white Scania truck.",
+       "Eltervåg Gruppens forside: overskriften Folk, biler og utstyr når du mangler kapasitet, ved siden av et bilde av en hvit Scania-lastebil."],
+    "el-mob": ["The same page on a phone, the headline stacked and the phone number still in the bar.",
+       "Samme side på mobil, med overskriften stablet og telefonnummeret fortsatt i menylinja."],
+    "lc-desk": ["LC Pulverlakk's home page: the headline Overflatebehandling for industri som stiller krav over a dark photograph of a coating booth.",
+       "LC Pulverlakks forside: overskriften Overflatebehandling for industri som stiller krav over et mørkt bilde av en lakkeringsboks."],
+    "lc-mob": ["The same page on a phone, with the corrosion classes still in the opening paragraph.",
+       "Samme side på mobil, med korrosjonsklassene fortsatt i ingressen."],
+    "leadbot": ["Leadbot's review table: five businesses, each with a verdict chip reading bad site, social only, no site, or has a good site.",
+       "Leadbots vurderingstabell: fem bedrifter, hver med en merkelapp som sier dårlig side, kun sosiale medier, ingen side, eller har en god side."],
+    "timeheist": ["A contact sheet of twelve procedurally generated islands seen from above, each labelled with its name, coastline roundness percentage and summit height.",
+       "Et kontaktark med tolv prosedyregenererte øyer sett ovenfra, hver merket med navn, kystlinjens rundhet i prosent og topphøyde."],
+    "blurt": ["Blurt's opening screen on a phone: the wordmark set in a serif face, the line One prompt a day. Two minutes to answer, and yesterday's top post.",
+       "Blurts åpningsskjerm på mobil: navnetrekket satt i en antikva, linjen One prompt a day. Two minutes to answer, og gårsdagens toppinnlegg."],
+    "studyhub": ["Study Hub's dashboard: a next-up lecture card, a week grid of classes, and panels for today, exams and inbox.",
+       "Study Hubs oversikt: et kort for neste forelesning, et ukerutenett med timer, og paneler for i dag, eksamen og innboks."],
+    "papercut": ["Papercut Labs' landing page listing PodNameFix, STLTidy and RefCheck, each with a one-line audience and a call to action.",
+       "Papercut Labs' landingsside med PodNameFix, STLTidy og RefCheck, hver med én linje om hvem det er for og en handling."]
+  };
+
   var labelled = Array.prototype.slice.call(document.querySelectorAll("[data-l10n]"));
+  var described = Array.prototype.slice.call(document.querySelectorAll("[data-l10n-alt]"));
 
   function setLabels(lang) {
     var i = lang === "nb" ? 1 : 0;
     labelled.forEach(function (el) {
       var pair = LABELS[el.getAttribute("data-l10n")];
       if (pair) el.setAttribute("aria-label", pair[i]);
+    });
+    described.forEach(function (el) {
+      var pair = ALTS[el.getAttribute("data-l10n-alt")];
+      if (pair) el.setAttribute("alt", pair[i]);
     });
   }
 

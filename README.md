@@ -51,12 +51,15 @@ downscaled and saved at `quality=88`. It is referenced absolutely
 (`https://cemenbakin.no/assets/share.jpg`), because a relative `og:image` is
 ignored by most crawlers.
 
-**An `aria-label` cannot ship twice.** Visible copy is duplicated and the CSS
-picks one, but an attribute has a single value, so the control names live in
-`LABELS` in `main.js` and follow the switch. They ship Norwegian in the markup
-with everything else. If you add a labelled control, give it
-`data-l10n="<key>"` and add the pair — otherwise a screen reader reads an
-English name off a page that declares itself `nb`.
+**An `aria-label` cannot ship twice, and neither can `alt`.** Visible copy is
+duplicated and the CSS picks one, but an attribute has a single value, so the
+control names live in `LABELS` and the image descriptions in `ALTS`, both in
+`main.js`, and both follow the switch. They ship Norwegian in the markup with
+everything else. A new labelled control needs `data-l10n="<key>"`; a new
+screenshot needs `data-l10n-alt="<key>"` and a pair in `ALTS`. Write those
+strings with real characters — `ø`, not `&oslash;`. An HTML entity is inert
+inside a JavaScript string and reaches the page as literal `f&oslash;lger`,
+which is what happened the first time these were written.
 
 **Copy.** Every translatable element ships twice, marked `lang="en"` and
 `lang="nb"`; CSS shows one and hides the other. Edit both, or the language
