@@ -127,6 +127,17 @@ switch; it pauses when the hero scrolls out of view or the tab is hidden, and it
 draws one still frame under `prefers-reduced-motion`. It is decoration: the
 canvas is `aria-hidden` and the page is complete without it.
 
+**The ridges interfere; they do not scroll.** Each layer is the sum of two
+profiles at different spatial frequencies drifting in opposite directions
+(`DRIFT`, `COUNTER`, `BLEND` at the top of the file). A single profile pushed
+sideways is rigid — the skyline at the right edge is the one that reaches the
+left edge a minute later, and it reads as a photograph being dragged past. Two
+counter-drifting profiles never repeat, so crests rise, lean and sink into one
+another while the mountain stays where it is. `REGAIN` scales the deviation back
+up, because averaging two profiles narrows the swing and the ridges would
+otherwise sit lower than `band()` asks for. `DRIFT` is slower than the old
+scroll on purpose: the interference carries the motion now.
+
 **The ridges are sized by the narrower dimension, not by the height.** Amplitude
 and the vertical spread of the layers used to be fractions of `H` alone, and the
 cycle count was fixed. A phone is a third of a laptop's width and just as tall,

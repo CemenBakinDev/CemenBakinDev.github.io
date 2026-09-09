@@ -19,6 +19,27 @@
 
   var LAYERS = 7;
   var TABLE = 2048;
+
+  /* --- how the ridges move -------------------------------------------------
+     A single profile scrolled sideways is rigid: the skyline you see at the
+     right edge is the one that reaches the left edge a minute later, and the
+     eye reads it as a photograph being dragged past. Each ridge is now the sum
+     of two profiles at different spatial frequencies drifting in opposite
+     directions, which is how water is drawn: neither component changes, but
+     their sum never repeats, so peaks rise, lean and sink into each other
+     while the mass of the mountain stays put.
+
+     DRIFT is deliberately slower than the old scroll — the interference does
+     the work now, and the motion should be something you notice only if you
+     stop and watch for it. */
+
+  var DRIFT   = 0.0000032;   /* cycles per millisecond, before the depth factor */
+  var COUNTER = 0.61;        /* how fast the second profile runs, and backwards */
+  var BLEND   = 0.62;        /* weight of the first profile in the sum */
+
+  /* Averaging two profiles narrows the swing, so the deviation from the mean
+     is scaled back up: the ridges keep the height the band asks for. */
+  var REGAIN = 1 / Math.sqrt(BLEND * BLEND + (1 - BLEND) * (1 - BLEND));
   var tabVisible = !document.hidden;
 
   /* --- the profiles, shared by every field --------------------------------
@@ -164,12 +185,16 @@
 
       for (var l = 0; l < LAYERS; l++) {
         var depth  = l / (LAYERS - 1);
-        var table  = profiles[l];
+        var tableA = profiles[l];
+        var tableB = profiles[(l + 3) % LAYERS];
         var b      = band(depth);
         var base   = b.base;
         var height = b.height;
-        var cyc    = cycles(depth);
-        var shift  = t * 0.0000055 * (1 + depth * 3.4) + (flip ? 0.37 : 0);
+        var cycA   = cycles(depth);
+        var cycB   = cycA * 0.63;          /* not a whole ratio, so it cannot resolve */
+        var phase  = (flip ? 0.37 : 0);
+        var driftA =  t * DRIFT * (1 + depth * 3.4) + phase;
+        var driftB = -t * DRIFT * COUNTER * (1 + depth * 2.2) + phase;
 
         var breathe = 0.5 + 0.5 * Math.sin(t * 0.00011 + l * 1.7);
         ctx.globalAlpha = (0.030 + depth * 0.045) * (0.65 + breathe * 0.35) / 0.06;
@@ -180,7 +205,10 @@
         ctx.beginPath();
         ctx.moveTo(0, H);
         for (var x = 0; x <= W; x += step) {
-          ctx.lineTo(x, base - at(table, (x / W) * cyc + shift) * height);
+          var u = x / W;
+          var sum = (at(tableA, u * cycA + driftA) - 0.5) * BLEND
+                  + (at(tableB, u * cycB + driftB) - 0.5) * (1 - BLEND);
+          ctx.lineTo(x, base - (0.5 + sum * REGAIN) * height);
         }
         ctx.lineTo(W, H);
         ctx.closePath();
