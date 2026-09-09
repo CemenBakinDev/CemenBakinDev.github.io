@@ -354,6 +354,16 @@ h1 {
 .affil a:hover { color: var(--ink); border-bottom-color: var(--ink-3); }
 @media (prefers-reduced-motion: reduce) { .affil a { transition: none; } }
 
+/* The 404 borrows .affil for its explanation, but that line is a sentence, not
+   a credential: mono caps that read well as "PROGRAMVAREINGENIØR I SOULSCALER"
+   turn a two-line sentence into work. Same size and weight in the page, set as
+   prose. */
+.affil.plain {
+  font: 400 .95rem/1.55 var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
 /* Nothing but the cue lives down here now, so it sits on the centre line
    under the name rather than off in a corner on its own. */
 .hero-foot {
@@ -383,8 +393,14 @@ h1 {
    everywhere else. No fill mode: if the animation never runs, the content is
    simply there — the same rule the panel reveal learned the hard way. */
 
+/* Transform only, never opacity — the same rule the panel reveal and the
+   introduction lines already keep, and this was the one place that broke it.
+   It ran on `main` and the whole hero, so a first frame that stalls would have
+   left the entire page present, laid out, and invisible, with no error
+   anywhere. That is the bug this rule exists because of; it had simply been
+   applied everywhere except the largest element on the site. */
 @keyframes page-in {
-  from { opacity: 0; transform: translateY(10px); }
+  from { transform: translateY(10px); }
 }
 main, .hero-in, .hero-foot {
   animation: page-in .55s cubic-bezier(.22, .61, .36, 1);

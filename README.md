@@ -240,6 +240,12 @@ to exactly its own padding), and the reveal animates `transform` only, never
 `opacity`. An animation that stalls at its first frame would otherwise leave a
 panel present, at full height, and invisible — with no error anywhere.
 
+`page-in` — the arrival animation on `main`, `.hero-in` and `.hero-foot` — broke
+that rule until 2026-09-09: it faded from `opacity: 0`, on the largest elements
+on the site. It was caught by measuring the rendered colour of the name in a
+screenshot (62 where `--ink` is 10) rather than by looking at it, which is worth
+remembering: a fade mid-flight and a contrast bug are indistinguishable by eye.
+
 **Controls that need the script stay hidden until it runs.** `.track-nav` is
 `display: none` by default and only shown under `[data-enhanced]`. Without
 `main.js` the counter would read "1 / 1" (its markup placeholder) beside two
