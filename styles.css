@@ -744,10 +744,20 @@ main, .hero-in, .hero-foot {
   gap: 1.5rem;
   align-items: end;
 }
+/* One column on a phone, and the DOM order is the reading order there:
+   heading, what the section is, then the controls immediately above the row
+   they drive. Two columns from 48rem, where the controls belong beside the
+   heading and the paragraph runs underneath both — which needs explicit
+   placement, since auto-placement would put the paragraph in the right-hand
+   column next to the heading. */
 @media (min-width: 48rem) {
   .track-head { grid-template-columns: minmax(0, 1fr) auto; }
+  .track-head > :first-child { grid-column: 1; grid-row: 1; }
+  .track-head .track-nav     { grid-column: 2; grid-row: 1; }
+  .track-head .sec-lede      { grid-column: 1 / -1; grid-row: 2; }
 }
 .track-head .sec { padding-top: clamp(3rem, 8vh, 4.5rem); }
+.track-head .sec-lede { margin-bottom: 0; }   /* the grid gap spaces it */
 
 /* The counter and the arrows are driven entirely by main.js, so they stay
    hidden until it has stamped the section. Without the script the row is

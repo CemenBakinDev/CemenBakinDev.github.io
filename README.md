@@ -101,12 +101,16 @@ a card — that is what keeps the evidence reading as the point.
 `sync()`. A website also needs a desktop shot and a phone shot — capture both
 with the headless Chromium recipe below, at 1440×900 and 390×844.
 
-**The section intro lives outside `.track-head`.** Above 48rem the head is two
-columns — heading on the left, counter and arrows on the right — so a paragraph
-inside it was laid out at half the page width and broke after five or six words.
-It looked like a rendering fault rather than a line of copy. The intro sits
-between the head and the row now, at `var(--measure)`, which is where a
-paragraph belongs anyway.
+**The section intro is placed, not auto-flowed.** Above 48rem `.track-head` is
+two columns, heading left, counter and arrows right, so a paragraph left to
+auto-placement lands in the right-hand column at half the page width and breaks
+after five or six words — it reads as a rendering fault rather than as copy.
+Moving it out of the head fixes the desktop and breaks the phone instead, where
+one column puts the row's controls *above* the text introducing the row. So the
+intro sits inside the head, before `.track-nav` in the DOM — which is the
+reading order on a phone — and desktop places all three explicitly: heading and
+nav on row one, intro spanning row two. Its bottom margin is zeroed inside the
+head; the grid gap does that spacing.
 
 **What the intro is for.** It says what is on offer, in plain terms, because a
 row of screenshots does not: a visitor who has not met you cannot tell from
