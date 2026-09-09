@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=7">
+<link rel="stylesheet" href="styles.css?v=8">
 <style>@view-transition { navigation: auto; }</style>
 </head>
 <body>
@@ -35,7 +35,13 @@
      you scroll, so the motion is information rather than atmosphere. -->
 <header class="topbar" id="topbar">
   <div class="bar">
-    <a class="wordmark" href="index.html">Cemen&nbsp;Bakin</a>
+    <a class="wordmark" href="index.html">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+        <path d="M24.9 7.9a12 12 0 1 0 0 16.2" fill="none" stroke="currentColor"
+              stroke-width="3.4" stroke-linecap="round"/>
+      </svg>
+      <span>Cemen&nbsp;Bakin</span>
+    </a>
 
     <nav class="secnav" aria-label="Seksjoner" data-l10n="sections">
       <a href="nettsider.html"><span lang="en">Websites</span><span lang="nb">Nettsider</span></a>
@@ -88,7 +94,7 @@
      behind a click and into the language the reader picked. -->
 <section id="tongues" aria-label="Språk" data-l10n="tongues">
   <button class="tongue" type="button" lang="nb" aria-expanded="false" aria-controls="bio-nb">
-    Jeg bygger nettsider som gjør jobben.
+    <span class="tongue-tag" aria-hidden="true">NO</span>Jeg bygger nettsider som gjør jobben.
   </button>
   <div class="bio" id="bio-nb" lang="nb" role="region">
     <p><span>Jeg heter Cemen Bakin.</span></p>
@@ -98,7 +104,7 @@
   </div>
 
   <button class="tongue" type="button" lang="en" aria-expanded="false" aria-controls="bio-en">
-    I build websites that do the job.
+    <span class="tongue-tag" aria-hidden="true">EN</span>I build websites that do the job.
   </button>
   <div class="bio" id="bio-en" lang="en" role="region">
     <p><span>My name is Cemen Bakin.</span></p>
@@ -108,7 +114,7 @@
   </div>
 
   <button class="tongue" type="button" lang="ru" aria-expanded="false" aria-controls="bio-ru">
-    Я делаю сайты, которые работают.
+    <span class="tongue-tag" aria-hidden="true">RU</span>Я делаю сайты, которые работают.
   </button>
   <div class="bio" id="bio-ru" lang="ru" role="region">
     <p><span>Меня зовут Cemen Bakin.</span></p>
@@ -118,8 +124,8 @@
   </div>
 
   <p class="tongue-note">
-    <span lang="en">Three working languages. Pick one.</span>
-    <span lang="nb">Tre arbeidsspråk. Velg ett.</span>
+    <span lang="en">Three working languages. Tap one to read it.</span>
+    <span lang="nb">Tre arbeidsspråk. Trykk på ett for å lese det.</span>
   </p>
 </section>
 
@@ -175,7 +181,7 @@
 
 </div><!-- /.sheet -->
 
-<script src="hero.js?v=7" defer></script>
-<script src="main.js?v=7" defer></script>
+<script src="hero.js?v=8" defer></script>
+<script src="main.js?v=8" defer></script>
 </body>
 </html>

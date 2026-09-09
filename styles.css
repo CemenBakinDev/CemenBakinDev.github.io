@@ -175,7 +175,15 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex; align-items: center; gap: 1.25rem;
 }
 
+/* The bar carries the mark, not just the name. The glyph is the favicon's —
+   the same open C — inlined rather than linked so it takes currentColor and
+   follows the theme; as an <img> it would have stayed the favicon's fixed
+   near-black on a light bar. Set apart from the name by a hairline, which is
+   what makes the pair read as a logotype rather than as two words. */
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
   font-weight: 600;
   font-size: .95rem;
   letter-spacing: -.015em;
@@ -183,6 +191,17 @@ img { max-width: 100%; height: auto; display: block; }
   text-decoration: none;
   white-space: nowrap;
   margin-right: auto;
+}
+.wordmark .mark {
+  width: 1.65rem; height: 1.65rem;
+  flex: none;
+  padding-right: .5rem;
+  border-right: 1px solid var(--line);
+  overflow: visible;
+}
+@media (max-width: 26rem) {
+  .wordmark .mark { padding-right: .4rem; }
+  .wordmark { gap: .4rem; }
 }
 
 .secnav { display: flex; gap: clamp(.8rem, 2.2vw, 1.6rem); }
@@ -602,11 +621,35 @@ main, .hero-in, .hero-foot {
   color: var(--ink-3);
 }
 
-/* the line you have opened leads; the other two step back */
+/* The tag says these are three languages and not three sentences: NO, EN, RU,
+   set in the mono the rest of the site labels things with. */
+.tongue-tag {
+  display: inline-block;
+  width: 2.6rem;          /* rem, not em: the column cannot scale with the line
+                             it labels, or the open sentence starts further in
+                             than the two closed ones */
+  font: 400 .7rem/1 var(--mono);
+  letter-spacing: .12em;
+  color: var(--ink-3);
+  transition: color .3s ease;
+}
+@media (max-width: 32rem) { .tongue-tag { width: 2rem; } }
+
+/* The line you have opened leads; the other two step back. Colour alone was
+   doing this job and it was too quiet to read as a choice — the open line is
+   now the full size and the closed ones are visibly smaller, so the block
+   looks like one thing selected out of three rather than three headings. */
 #tongues[data-enhanced] .tongue[aria-expanded="true"] { color: var(--ink); }
-#tongues[data-enhanced]:has(.tongue[aria-expanded="true"]) .tongue[aria-expanded="false"] {
+#tongues[data-enhanced] .tongue[aria-expanded="true"] .tongue-tag { color: var(--ink-2); }
+
+#tongues[data-enhanced] .tongue[aria-expanded="false"] {
+  font-size: clamp(1.1rem, 2.9vw, 1.75rem);
   color: var(--ink-3);
 }
+#tongues[data-enhanced] .tongue[aria-expanded="false"]:hover { color: var(--ink-2); }
+
+.tongue { transition: color .3s ease, font-size .3s cubic-bezier(.22, .61, .36, 1); }
+@media (prefers-reduced-motion: reduce) { .tongue { transition: color .3s ease; } }
 
 /* --- what is behind a sentence ------------------------------------------
    Open by default, so with the script blocked all three introductions are

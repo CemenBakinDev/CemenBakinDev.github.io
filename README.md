@@ -282,6 +282,15 @@ diagnosis. When measuring anything animated, disable the transition on the
 element first (or pass `--force-prefers-reduced-motion`) and measure again
 before believing the number.
 
+**The bar carries a mark, not just a name.** The glyph is the favicon's open
+C, inlined in each page rather than linked as an `<img>` so it takes
+`currentColor` and follows the theme — as an image it would have stayed the
+favicon's fixed near-black on a light bar. Its arc is drawn wider than the
+favicon's: inside the rounded square the arc is inset by the square, and
+standing on its own at the same proportions it read as a stray letter rather
+than a mark. A hairline separates it from the name, which is what makes the two
+read as one lockup.
+
 **The three languages are shown, not claimed.** `#tongues` prints the same
 sentence in Norwegian, English and Russian, and it is the one block that
 deliberately ignores the EN/NO switch — all three lines are always visible,
@@ -296,6 +305,15 @@ The introductions are open in the markup and `main.js` closes them, so with the
 script blocked all three are simply readable. The line reveal animates position
 only, never opacity, and never from behind a clip the line starts outside of: a
 stalled animation must not be able to hide the text.
+
+**The open line is bigger, not just darker.** Colour alone marked the selected
+introduction, which was too quiet to read as a choice at all — the block looked
+like three headings rather than one of three selected. The open line keeps the
+full size and the closed two drop to about two thirds, and each carries a mono
+`NO` / `EN` / `RU` tag so it is obvious these are languages and not three
+sentences. The tag column is sized in `rem`, never `em`: in `em` it scales with
+the line it labels, and the open sentence starts further in than the closed
+ones.
 
 **The About blocks.** `.blocks` is a grid whose `gap: 1px` over a `--line`
 background *is* the hairline grid — there are no borders on the blocks
