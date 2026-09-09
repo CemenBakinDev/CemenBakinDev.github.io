@@ -20,6 +20,13 @@ and it is a real one: a change to the bar has to be made three times. If you
 add a fourth page, copy an existing one and change the `aria-current="page"` in
 its nav.
 
+**Bump `?v=` when you edit the CSS or the JS.** Pages serves everything with
+`cache-control: max-age=600`, so a returning visitor can run an old `hero.js`
+against new HTML for ten minutes after a deploy — which looks exactly like the
+fix not working, and was reported as such. Every page links its assets as
+`styles.css?v=N`, `hero.js?v=N`, `main.js?v=N`; raising N in all four HTML files
+retires the old copy the moment the new HTML lands.
+
 **Moving between them** uses cross-document view transitions where the browser
 has them (`@view-transition { navigation: auto }` sits in each head) and a
 `page-in` keyframe everywhere else. As with the panel reveal, it has no fill
