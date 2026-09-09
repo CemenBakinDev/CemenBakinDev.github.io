@@ -110,11 +110,39 @@
     var gradients = null;
     var running = false, raf = 0, onScreen = false, tick = 0;
 
+    /* --- the shape, in a unit that is not the height ----------------------
+       Amplitude used to be a fraction of H alone. A phone is a third of a
+       laptop's width and just as tall, so it drew the same ridges at the same
+       height into a third of the horizontal room and the peaks came out as
+       stretched spikes. The unit follows the narrower dimension instead, and
+       collapses to exactly H on any desktop shape — where W * 0.9 >= H — so
+       the wide case draws precisely what it drew before.
+
+       The same reasoning applies to how many ridges fit across: a fixed cycle
+       count packs a laptop's worth of features into a phone's width, so the
+       count is scaled down with the width and floored, which widens each
+       ridge rather than flattening it. */
+
+    function unit() { return Math.min(H, W * 0.9); }
+
+    function cycles(depth) {
+      return (1.15 + depth * 0.85) * Math.max(0.55, Math.min(1, W / 1440));
+    }
+
+    /* base = H * (0.42 + depth * 0.52) when the unit is H, as it is on a
+       desktop; written against the bottom edge so the massif stays a band
+       along the horizon when the unit is smaller than the canvas. */
+    function band(depth) {
+      var u = unit();
+      return { base: H - u * (0.06 + (1 - depth) * 0.52),
+               height: u * (0.10 + depth * 0.22) };
+    }
+
     function buildGradients(p) {
       gradients = [];
       for (var l = 0; l < LAYERS; l++) {
-        var depth = l / (LAYERS - 1);
-        var base = H * (0.42 + depth * 0.52), height = H * (0.10 + depth * 0.22);
+        var b = band(l / (LAYERS - 1));
+        var base = b.base, height = b.height;
         var g = ctx.createLinearGradient(0, base - height * 1.5, 0, base + height * 0.2);
         g.addColorStop(0, "rgba(" + p.haze.join(",") + ",0)");
         g.addColorStop(1, "rgba(" + p.haze.join(",") + ",0.06)");
@@ -137,9 +165,10 @@
       for (var l = 0; l < LAYERS; l++) {
         var depth  = l / (LAYERS - 1);
         var table  = profiles[l];
-        var base   = H * (0.42 + depth * 0.52);
-        var height = H * (0.10 + depth * 0.22);
-        var cycles = 1.15 + depth * 0.85;
+        var b      = band(depth);
+        var base   = b.base;
+        var height = b.height;
+        var cyc    = cycles(depth);
         var shift  = t * 0.0000055 * (1 + depth * 3.4) + (flip ? 0.37 : 0);
 
         var breathe = 0.5 + 0.5 * Math.sin(t * 0.00011 + l * 1.7);
@@ -151,7 +180,7 @@
         ctx.beginPath();
         ctx.moveTo(0, H);
         for (var x = 0; x <= W; x += step) {
-          ctx.lineTo(x, base - at(table, (x / W) * cycles + shift) * height);
+          ctx.lineTo(x, base - at(table, (x / W) * cyc + shift) * height);
         }
         ctx.lineTo(W, H);
         ctx.closePath();
@@ -190,7 +219,7 @@
       canvas.width  = Math.round(W * dpr);
       canvas.height = Math.round(H * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      gradients = null;                   /* they are sized to H */
+      gradients = null;                   /* they are sized to the band */
       draw(performance.now());
     }
 

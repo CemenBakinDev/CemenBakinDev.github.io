@@ -120,6 +120,18 @@ switch; it pauses when the hero scrolls out of view or the tab is hidden, and it
 draws one still frame under `prefers-reduced-motion`. It is decoration: the
 canvas is `aria-hidden` and the page is complete without it.
 
+**The ridges are sized by the narrower dimension, not by the height.** Amplitude
+and the vertical spread of the layers used to be fractions of `H` alone, and the
+cycle count was fixed. A phone is a third of a laptop's width and just as tall,
+so it drew the same number of ridges at the same height into a third of the
+horizontal room: the peaks came out as stretched spikes running the length of
+the screen. `unit()` is `min(H, W * 0.9)` and `cycles()` scales with width down
+to a floor of 0.55, so a narrow screen gets fewer, broader, shorter ridges — a
+horizon band rather than a comb. Both collapse to exactly the old values when
+`W * 0.9 >= H`, which is every desktop shape, so the wide case is untouched.
+`band(depth)` is the one description of the silhouette; the haze gradients and
+the filled path both read from it, so they cannot drift apart.
+
 Projects are not numbered: five of them are not a sequence, so the order
 carries no meaning the reader needs.
 
