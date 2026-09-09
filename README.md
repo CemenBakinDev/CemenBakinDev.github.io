@@ -123,11 +123,17 @@ canvas is `aria-hidden` and the page is complete without it.
 Projects are not numbered: five of them are not a sequence, so the order
 carries no meaning the reader needs.
 
+**The studio's own site is one of the three cases.** `nettsider.html` shows two
+client sites and soulscaler.no itself. Keep it last in the track: the first
+`.pcard` is the one that opens on arrival, and client work should be what greets
+a visitor. Its numbers are counted off the live page (six services, two projects,
+one repeated action), so re-count them if that page is rebuilt.
+
 **Client credit, and the one personal role line.** The website cases still
 credit `Studio: SoulScaler` per project and claim no individual role there,
 because a studio credit is verifiable from soulscaler.no and a per-project one
 is not. The role is stated once, about the person rather than about any single
-case: `Software engineer at SoulScaler` / `Programvareutvikler i SoulScaler`, in
+case: `Software engineer at SoulScaler` / `Programvareingeniør i SoulScaler`, in
 the hero (`.affil`), in the three introductions, and in the closing field on
 every page. Every `SoulScaler` in a spec list links to soulscaler.no, so the
 claim is one click from its check. Keep it that way — a role line is only worth
