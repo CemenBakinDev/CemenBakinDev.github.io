@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 <style>@view-transition { navigation: auto; }</style>
 </head>
 <body>
@@ -79,8 +79,55 @@
 <div class="sheet">
 
 <main id="content">
-<!-- Two doors rather than two paragraphs. The work is behind them; the
-     home page's job is to be the shortest possible route in. -->
+<!-- The three languages are demonstrated rather than asserted. A row of
+     flags would claim countries, not languages, and a self-reported "fluent"
+     is the kind of unverifiable adjective the rest of this site argues
+     against. The same sentence, three times, is the evidence itself. -->
+<!-- The three languages, and behind each one the same person introducing
+     himself in it. This is where the about text went: not deleted, moved
+     behind a click and into the language the reader picked. -->
+<section id="tongues" aria-label="Språk" data-l10n="tongues">
+  <button class="tongue" type="button" lang="nb" aria-expanded="false" aria-controls="bio-nb">
+    Jeg bygger nettsider som gjør jobben.
+  </button>
+  <div class="bio" id="bio-nb" lang="nb" role="region">
+    <p><span>Jeg heter Cemen Bakin.</span></p>
+    <p><span>Jeg studerer medisinske fag i Oslo og bor mellom Oslo og Bergen.</span></p>
+    <p><span>Jeg er programvareingeniør i SoulScaler, hvor jeg bygger nettsider for norske bedrifter — og verktøy som må gå videre når ingen ser på.</span></p>
+    <p><span>Du kan se det jeg har bygget nedenfor.</span></p>
+  </div>
+
+  <button class="tongue" type="button" lang="en" aria-expanded="false" aria-controls="bio-en">
+    I build websites that do the job.
+  </button>
+  <div class="bio" id="bio-en" lang="en" role="region">
+    <p><span>My name is Cemen Bakin.</span></p>
+    <p><span>I study medical sciences in Oslo and live between Oslo and Bergen.</span></p>
+    <p><span>I am a software engineer at SoulScaler, where I build websites for Norwegian businesses — and tools that have to keep running when nobody is watching.</span></p>
+    <p><span>You can see what I have built below.</span></p>
+  </div>
+
+  <button class="tongue" type="button" lang="ru" aria-expanded="false" aria-controls="bio-ru">
+    Я делаю сайты, которые работают.
+  </button>
+  <div class="bio" id="bio-ru" lang="ru" role="region">
+    <p><span>Меня зовут Cemen Bakin.</span></p>
+    <p><span>Я изучаю медицинские науки в Осло и живу между Осло и Бергеном.</span></p>
+    <p><span>Я инженер-программист в SoulScaler: делаю сайты для норвежских компаний — и инструменты, которые продолжают работать, когда никто не смотрит.</span></p>
+    <p><span>Ниже можно посмотреть, что я сделал.</span></p>
+  </div>
+
+  <p class="tongue-note">
+    <span lang="en">Three working languages. Pick one.</span>
+    <span lang="nb">Tre arbeidsspråk. Velg ett.</span>
+  </p>
+</section>
+
+<!-- Two doors rather than two paragraphs, and they come after the
+     introduction rather than before it: a visitor who has just read who this
+     is should find the work under that sentence, not have to scroll back up
+     for the person once they have seen the projects. The last line of each
+     introduction points down here. -->
 <nav class="doors" aria-label="Arbeid" data-l10n="work">
   <a class="door" href="nettsider.html">
     <span class="door-shot">
@@ -101,47 +148,6 @@
     <span class="door-n"><b>5</b> <span lang="en">tools, a game world, an app</span><span lang="nb">verktøy, en spillverden, en app</span></span>
   </a>
 </nav>
-
-<!-- The three languages are demonstrated rather than asserted. A row of
-     flags would claim countries, not languages, and a self-reported "fluent"
-     is the kind of unverifiable adjective the rest of this site argues
-     against. The same sentence, three times, is the evidence itself. -->
-<!-- The three languages, and behind each one the same person introducing
-     himself in it. This is where the about text went: not deleted, moved
-     behind a click and into the language the reader picked. -->
-<section id="tongues" aria-label="Språk" data-l10n="tongues">
-  <button class="tongue" type="button" lang="nb" aria-expanded="false" aria-controls="bio-nb">
-    Jeg bygger nettsider som gjør jobben.
-  </button>
-  <div class="bio" id="bio-nb" lang="nb" role="region">
-    <p><span>Jeg heter Cemen Bakin.</span></p>
-    <p><span>Jeg studerer medisinske fag i Oslo og bor mellom Oslo og Bergen.</span></p>
-    <p><span>Jeg er programvareingeniør i SoulScaler, hvor jeg bygger nettsider for norske bedrifter — og verktøy som må gå videre når ingen ser på.</span></p>
-  </div>
-
-  <button class="tongue" type="button" lang="en" aria-expanded="false" aria-controls="bio-en">
-    I build websites that do the job.
-  </button>
-  <div class="bio" id="bio-en" lang="en" role="region">
-    <p><span>My name is Cemen Bakin.</span></p>
-    <p><span>I study medical sciences in Oslo and live between Oslo and Bergen.</span></p>
-    <p><span>I am a software engineer at SoulScaler, where I build websites for Norwegian businesses — and tools that have to keep running when nobody is watching.</span></p>
-  </div>
-
-  <button class="tongue" type="button" lang="ru" aria-expanded="false" aria-controls="bio-ru">
-    Я делаю сайты, которые работают.
-  </button>
-  <div class="bio" id="bio-ru" lang="ru" role="region">
-    <p><span>Меня зовут Cemen Bakin.</span></p>
-    <p><span>Я изучаю медицинские науки в Осло и живу между Осло и Бергеном.</span></p>
-    <p><span>Я инженер-программист в SoulScaler: делаю сайты для норвежских компаний — и инструменты, которые продолжают работать, когда никто не смотрит.</span></p>
-  </div>
-
-  <p class="tongue-note">
-    <span lang="en">Three working languages. Pick one.</span>
-    <span lang="nb">Tre arbeidsspråk. Velg ett.</span>
-  </p>
-</section>
 
 </main>
 
@@ -169,7 +175,7 @@
 
 </div><!-- /.sheet -->
 
-<script src="hero.js?v=4" defer></script>
-<script src="main.js?v=4" defer></script>
+<script src="hero.js?v=5" defer></script>
+<script src="main.js?v=5" defer></script>
 </body>
 </html>

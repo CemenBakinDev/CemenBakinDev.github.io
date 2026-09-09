@@ -406,6 +406,11 @@ main, .hero-in, .hero-foot {
   gap: clamp(1rem, 2.5vw, 1.75rem);
   padding-top: clamp(3rem, 9vh, 5.5rem);
 }
+
+/* The introduction now sits above the doors, and both carried their own air:
+   the two paddings stacked into a dead field with nothing in it. The one below
+   the introduction is enough for both. */
+#tongues + .doors { padding-top: 0; }
 @media (min-width: 52rem) { .doors { grid-template-columns: 1fr 1fr; } }
 
 .door {

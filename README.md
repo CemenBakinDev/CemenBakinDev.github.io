@@ -244,8 +244,14 @@ buttons that do nothing — worse than no controls, since the row still scrolls
 by touch and trackpad. The same rule is why the panels are open by default:
 the enhancement collapses, it never reveals.
 
-**The home page is four beats and nothing else.** The opening field, two
-doors, the three languages, and a closing field with the address on it. What
+**The home page is four beats and nothing else.** The opening field, the three
+languages, two doors, and a closing field with the address on it. The
+introduction comes *before* the doors: a visitor who has just read who this is
+should find the work under that sentence rather than scroll back up for the
+person after seeing the projects, and the last line of each introduction — "Du
+kan se det jeg har bygget nedenfor" — points at them. Both sections carried
+their own vertical air, so `#tongues + .doors` drops the doors' top padding;
+without it the two paddings stack into an empty field. What
 used to sit between them — an about grid, a three-part method essay, a column
 of contact rows — was the same shape repeated six times down the page: mono
 label, hairline, block. That repetition is both what makes a page read as
