@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="nb" data-lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Cemen Bakin</title>
+<meta name="description" content="Siden finnes ikke. Gå til nettsider, programvare eller kontakt.">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<style>@view-transition { navigation: auto; }</style>
+</head>
+<body>
+
+<!-- Every path in this file is root-absolute. GitHub Pages serves this page at
+     whatever address was missed — /gamle/side/ included — so a relative
+     stylesheet would resolve against that address and the page would arrive
+     unstyled at exactly the moment it needs to look deliberate. -->
+
+<a class="skip" href="#content" lang="en">Skip to the content</a>
+<a class="skip" href="#content" lang="nb">Hopp til innholdet</a>
+
+<header class="topbar" id="topbar">
+  <div class="bar">
+    <a class="wordmark" href="/">Cemen&nbsp;Bakin</a>
+
+    <nav class="secnav" aria-label="Sections">
+      <a href="/nettsider.html"><span lang="en">Websites</span><span lang="nb">Nettsider</span></a>
+      <a href="/programvare.html"><span lang="en">Software</span><span lang="nb">Programvare</span></a>
+      <a href="/#contact"><span lang="en">Contact</span><span lang="nb">Kontakt</span></a>
+    </nav>
+
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Language">
+        <button type="button" data-setlang="en" aria-pressed="false">EN</button>
+        <button type="button" data-setlang="nb" aria-pressed="true">NO</button>
+      </div>
+      <button type="button" class="ghost" id="theme" aria-label="Switch colour scheme">
+        <span class="to-dark">Dark</span><span class="to-light">Light</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="content">
+<!-- The same opening field as the home page, with the number where the name
+     goes. A missing page is still this site, so it gets the ridges, the grain
+     and the serif rather than a stack of apologies — and it says the one
+     useful thing (this address holds nothing) before offering the way out. -->
+<section class="hero" id="top">
+  <canvas class="ridge" aria-hidden="true"></canvas>
+  <div class="hero-in">
+    <p class="eyebrow"><span lang="en">Error 404</span><span lang="nb">Feil 404</span></p>
+    <h1>404</h1>
+    <p class="role" lang="en">This page does not exist.</p>
+    <p class="role" lang="nb">Denne siden finnes ikke.</p>
+    <p class="affil" lang="en">The address may be mistyped, or the page may have moved</p>
+    <p class="affil" lang="nb">Adressen kan være feilskrevet, eller siden kan ha flyttet</p>
+  </div>
+
+  <div class="hero-foot">
+    <p class="field-meta">
+      <a href="/"><span lang="en">Home</span><span lang="nb">Hjem</span></a>
+      <span aria-hidden="true">·</span>
+      <a href="/nettsider.html"><span lang="en">Websites</span><span lang="nb">Nettsider</span></a>
+      <span aria-hidden="true">·</span>
+      <a href="/programvare.html"><span lang="en">Software</span><span lang="nb">Programvare</span></a>
+      <span aria-hidden="true">·</span>
+      <a href="/#contact"><span lang="en">Contact</span><span lang="nb">Kontakt</span></a>
+    </p>
+  </div>
+</section>
+</main>
+
+<script src="/hero.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

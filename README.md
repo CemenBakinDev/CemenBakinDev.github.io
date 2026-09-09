@@ -1,4 +1,4 @@
-# cemenbakin.dev — portfolio
+# cemenbakin.no — portfolio
 
 A single hand-written page. No framework, no build step, no tracking: what is
 in this directory is exactly what gets served.
@@ -7,6 +7,7 @@ in this directory is exactly what gets served.
 index.html        the opening, the two doors, the languages, the closing
 nettsider.html    the client websites
 programvare.html  the software
+404.html          the missing page (root-absolute paths, see below)
 styles.css        tokens, layout, and the print stylesheet
 hero.js           the ridges in the opening field (index only, decoration)
 main.js           language memory, theme memory, the bar, the project rows
@@ -35,6 +36,15 @@ python3 -m http.server 8088     # then open http://127.0.0.1:8088
 **Copy.** Every translatable element ships twice, marked `lang="en"` and
 `lang="nb"`; CSS shows one and hides the other. Edit both, or the language
 toggle will show a gap. There is no string table to keep in sync.
+
+**Norwegian is the default, unconditionally.** Every file ships as
+`<html lang="nb" data-lang="nb">`, so the page is Norwegian before a line of
+script runs, and the `<title>` and meta descriptions are Norwegian to match the
+declared language. `main.js` no longer sniffs `navigator.language` — it was the
+only thing that could put a Norwegian client on an English page, and the
+clients this site is for are Norwegian. Only a remembered choice from the EN/NO
+switch moves it. If you add a page, set both attributes and press the NO button
+(`aria-pressed="true"`), not EN.
 
 **Colour.** The page has **no accent colour**, and that is the rule the whole
 design hangs on: every colour a visitor sees belongs to the work being shown —
@@ -85,6 +95,13 @@ it does not reveal them, and nothing is unreachable if the script never runs.
 `main.js` stamps `data-enhanced` on the section, and CSS hides the panels from
 there.
 
+**The first project is open on arrival.** A deep link (`#d-leadbot`) opens that
+project; with no hash the first card in the row opens instead. Neither scrolls —
+`open(card, false)` — so the reader still lands at the top of the section, but
+with prose under the row rather than a strip of pictures and an empty page
+beneath it. Reordering the cards therefore changes what greets a visitor: the
+first `.pcard` in the track is the one that opens.
+
 Do not try to animate the panel's height with the `grid-template-rows: 0fr → 1fr`
 trick. It was tried and it resolves to zero here: the free space in an
 auto-height grid is zero, and `overflow: hidden` takes the item's automatic
@@ -106,10 +123,15 @@ canvas is `aria-hidden` and the page is complete without it.
 Projects are not numbered: five of them are not a sequence, so the order
 carries no meaning the reader needs.
 
-**Client credit.** The website cases credit `Studio: SoulScaler` and claim no
-individual role, because the studio credit is verifiable from soulscaler.no and
-an individual one is not. If you add a personal role line, make sure it is one
-you would be comfortable having a client read back to you.
+**Client credit, and the one personal role line.** The website cases still
+credit `Studio: SoulScaler` per project and claim no individual role there,
+because a studio credit is verifiable from soulscaler.no and a per-project one
+is not. The role is stated once, about the person rather than about any single
+case: `Software engineer at SoulScaler` / `Programvareutvikler i SoulScaler`, in
+the hero (`.affil`), in the three introductions, and in the closing field on
+every page. Every `SoulScaler` in a spec list links to soulscaler.no, so the
+claim is one click from its check. Keep it that way — a role line is only worth
+having if a client could read it back to you.
 
 **A new section.** Give it an `id`, add an `<a href="#id" data-spy="id">` to
 `.secnav`, and the bar picks it up. A section left out of the nav simply stays
@@ -228,7 +250,29 @@ the long-form prose. That layout is a self-contained block at the bottom of
 a fixed four, because A4 is narrower than every layout breakpoint on the page
 and the responsive grids would otherwise collapse to one column each.
 
+## The missing page
+
+`404.html` is what GitHub Pages serves for any address that does not exist, and
+it is served *at that address* — `/gamle/side/` included. Every path in it is
+therefore root-absolute (`/styles.css`, `/main.js`, `/assets/…`): a relative one
+would resolve against the missed address and the page would arrive unstyled at
+exactly the moment it needs to look deliberate. It uses no CSS of its own — the
+opening field with the number where the name goes — so it cannot drift from the
+rest of the site.
+
 ## Deploying
 
-Static hosting, nothing to configure. For GitHub Pages: push to `main` and
-point Pages at the repository root.
+Static hosting, nothing to configure. This repository is
+`CemenBakinDev/CemenBakinDev.github.io`: push to **`master`** (not `main`) and
+Pages serves the repository root at **https://cemenbakin.no**. The domain is
+registered outside Cloudflare (`ns1..3.dnsdomene.net`), with apex A records to
+GitHub's four Pages addresses and `www` as a CNAME.
+
+**If HTTPS is broken on the custom domain,** read `https_certificate` from
+`gh api repos/CemenBakinDev/CemenBakinDev.github.io/pages` before waiting. An
+absent object means provisioning was never requested and no amount of waiting
+fixes it — remove the custom domain and re-add it (`cname: null`, then set it
+again), which walks the state through `new` → `authorization_pending` →
+`approved` in about a minute. A real state value means it is genuinely in
+progress. Note that those API calls rewrite the repository's `CNAME` file, so
+pull afterwards.

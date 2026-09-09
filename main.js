@@ -27,14 +27,13 @@
     if (remember) store.set("lang", lang);
   }
 
+  /* Norwegian is the ground state, not a guess about the visitor. The clients
+     this site is for are Norwegian businesses, so the page opens in their
+     language and English is a choice the reader makes. The markup ships as
+     nb, so with this file blocked the page is still Norwegian; the browser is
+     no longer sniffed, and only a remembered choice moves it. */
   var savedLang = store.get("lang");
-  if (savedLang === "en" || savedLang === "nb") {
-    setLang(savedLang, false);
-  } else if ((navigator.language || "").toLowerCase().indexOf("nb") === 0 ||
-             (navigator.language || "").toLowerCase().indexOf("no") === 0 ||
-             (navigator.language || "").toLowerCase().indexOf("nn") === 0) {
-    setLang("nb", false);
-  }
+  if (savedLang === "en" || savedLang === "nb") setLang(savedLang, false);
 
   langButtons.forEach(function (b) {
     b.addEventListener("click", function () { setLang(b.dataset.setlang, true); });
@@ -185,10 +184,15 @@
       if (openCard) { close(openCard); openCard.focus(); }
     });
 
-    /* A link straight to a project opens it. */
+    /* A link straight to a project opens it; otherwise the first one is
+       already open. Landing with everything shut made the track a row of
+       pictures with nothing to read, and left the section under it empty —
+       the same reason the Norwegian introduction opens on the home page.
+       Neither case scrolls: the reader still starts at the top of the
+       section, with text already under the row. */
     var hash = (location.hash || "").slice(1);
     var deep = cards.filter(function (c) { return c.dataset.detail === hash; })[0];
-    if (deep) open(deep, false);
+    open(deep || cards[0], false);
 
     sync();
   });

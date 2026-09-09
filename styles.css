@@ -333,6 +333,27 @@ h1 {
   color: var(--ink-2);
 }
 
+/* The affiliation answers what a name and a discipline leave open: who he does
+   it for. It is set like the eyebrow above the name rather than as a third
+   headline, so the two of them frame the name as a pair — and it is a link,
+   because a studio you can open is a check the reader can make. */
+.affil {
+  margin: clamp(.85rem, 2vh, 1.2rem) 0 0;
+  font: 400 .7rem/1.6 var(--mono);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.affil a {
+  color: var(--ink-2);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: .15em;
+  transition: color .2s ease, border-color .2s ease;
+}
+.affil a:hover { color: var(--ink); border-bottom-color: var(--ink-3); }
+@media (prefers-reduced-motion: reduce) { .affil a { transition: none; } }
+
 /* Nothing but the cue lives down here now, so it sits on the centre line
    under the name rather than off in a corner on its own. */
 .hero-foot {
@@ -932,6 +953,8 @@ main, .hero-in, .hero-foot {
   margin-bottom: .5rem;
 }
 .specs dd { margin: 0; font-size: .92rem; line-height: 1.4; color: var(--ink-2); }
+.specs dd a { color: inherit; text-decoration-color: var(--line); }
+.specs dd a:hover { color: var(--ink); text-decoration-color: currentColor; }
 
 .chips { list-style: none; margin: 0; padding: 0;
   display: flex; flex-wrap: wrap; gap: .35rem; }
@@ -1303,6 +1326,8 @@ a:hover { text-decoration-thickness: 2px; }
   h1 { font-size: 26pt; }
   .eyebrow { margin-bottom: 4pt; font-size: 6pt; }
   .role { font-size: 10pt; margin-top: 3pt; }
+  .affil { font-size: 6pt; margin-top: 4pt; letter-spacing: .12em; }
+  .affil a { border: 0; }
   .hero-foot { display: block; }
 
   /* a section label must not be left stranded at the foot of a page */
