@@ -12,10 +12,17 @@
 <meta property="og:description" content="Nettsider og programvare som gjør jobben, og beviser at de gjorde den. Utvalgt arbeid, 2026.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cemenbakin.no/">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Cemen Bakin">
+<meta property="og:image" content="https://cemenbakin.no/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cemen Bakin — nettsider og programvare. Programvareingeniør i SoulScaler.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 <style>@view-transition { navigation: auto; }</style>
 </head>
 <body>
@@ -30,18 +37,18 @@
   <div class="bar">
     <a class="wordmark" href="index.html">Cemen&nbsp;Bakin</a>
 
-    <nav class="secnav" aria-label="Sections">
+    <nav class="secnav" aria-label="Seksjoner" data-l10n="sections">
       <a href="nettsider.html"><span lang="en">Websites</span><span lang="nb">Nettsider</span></a>
       <a href="programvare.html"><span lang="en">Software</span><span lang="nb">Programvare</span></a>
       <a href="#contact"><span lang="en">Contact</span><span lang="nb">Kontakt</span></a>
     </nav>
 
     <div class="controls">
-      <div class="seg" role="group" aria-label="Language">
+      <div class="seg" role="group" aria-label="Språk" data-l10n="language">
         <button type="button" data-setlang="en" aria-pressed="false">EN</button>
         <button type="button" data-setlang="nb" aria-pressed="true">NO</button>
       </div>
-      <button type="button" class="ghost" id="theme" aria-label="Switch colour scheme">
+      <button type="button" class="ghost" id="theme" aria-label="Bytt fargetema" data-l10n="theme">
         <span class="to-dark">Dark</span><span class="to-light">Light</span>
       </button>
     </div>
@@ -65,7 +72,7 @@
   </div>
 
   <div class="hero-foot">
-    <a class="cue" href="#content" aria-label="Go to the work"><span aria-hidden="true">&#8595;</span></a>
+    <a class="cue" href="#content" aria-label="Gå til arbeidet" data-l10n="cue"><span aria-hidden="true">&#8595;</span></a>
   </div>
 </section>
 
@@ -74,7 +81,7 @@
 <main id="content">
 <!-- Two doors rather than two paragraphs. The work is behind them; the
      home page's job is to be the shortest possible route in. -->
-<nav class="doors" aria-label="Work">
+<nav class="doors" aria-label="Arbeid" data-l10n="work">
   <a class="door" href="nettsider.html">
     <span class="door-shot">
       <img src="assets/soulscaler.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="">
@@ -102,7 +109,7 @@
 <!-- The three languages, and behind each one the same person introducing
      himself in it. This is where the about text went: not deleted, moved
      behind a click and into the language the reader picked. -->
-<section id="tongues" aria-label="Languages">
+<section id="tongues" aria-label="Språk" data-l10n="tongues">
   <button class="tongue" type="button" lang="nb" aria-expanded="false" aria-controls="bio-nb">
     Jeg bygger nettsider som gjør jobben.
   </button>
@@ -162,7 +169,7 @@
 
 </div><!-- /.sheet -->
 
-<script src="hero.js?v=3" defer></script>
-<script src="main.js?v=3" defer></script>
+<script src="hero.js?v=4" defer></script>
+<script src="main.js?v=4" defer></script>
 </body>
 </html>

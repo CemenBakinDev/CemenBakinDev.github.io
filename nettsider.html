@@ -12,10 +12,17 @@
 <meta property="og:description" content="Nettsider og programvare som gjør jobben, og beviser at de gjorde den. Utvalgt arbeid, 2026.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cemenbakin.no/nettsider.html">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:site_name" content="Cemen Bakin">
+<meta property="og:image" content="https://cemenbakin.no/assets/share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cemen Bakin — nettsider og programvare. Programvareingeniør i SoulScaler.">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Schibsted+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="styles.css?v=3">
+<link rel="stylesheet" href="styles.css?v=4">
 <style>@view-transition { navigation: auto; }</style>
 </head>
 <body>
@@ -30,18 +37,18 @@
   <div class="bar">
     <a class="wordmark" href="index.html">Cemen&nbsp;Bakin</a>
 
-    <nav class="secnav" aria-label="Sections">
+    <nav class="secnav" aria-label="Seksjoner" data-l10n="sections">
       <a href="nettsider.html" aria-current="page"><span lang="en">Websites</span><span lang="nb">Nettsider</span></a>
       <a href="programvare.html"><span lang="en">Software</span><span lang="nb">Programvare</span></a>
       <a href="#contact"><span lang="en">Contact</span><span lang="nb">Kontakt</span></a>
     </nav>
 
     <div class="controls">
-      <div class="seg" role="group" aria-label="Language">
+      <div class="seg" role="group" aria-label="Språk" data-l10n="language">
         <button type="button" data-setlang="en" aria-pressed="false">EN</button>
         <button type="button" data-setlang="nb" aria-pressed="true">NO</button>
       </div>
-      <button type="button" class="ghost" id="theme" aria-label="Switch colour scheme">
+      <button type="button" class="ghost" id="theme" aria-label="Bytt fargetema" data-l10n="theme">
         <span class="to-dark">Dark</span><span class="to-light">Light</span>
       </button>
     </div>
@@ -62,13 +69,13 @@
     <div class="track-nav">
       <p class="track-count"><span class="num" data-count>1</span><span class="num"> / </span><span class="num" data-total>1</span></p>
       <div class="track-btns">
-        <button type="button" class="tbtn" data-track="prev" aria-label="Previous"><span aria-hidden="true">&#8592;</span></button>
-        <button type="button" class="tbtn" data-track="next" aria-label="Next"><span aria-hidden="true">&#8594;</span></button>
+        <button type="button" class="tbtn" data-track="prev" aria-label="Forrige" data-l10n="prev"><span aria-hidden="true">&#8592;</span></button>
+        <button type="button" class="tbtn" data-track="next" aria-label="Neste" data-l10n="next"><span aria-hidden="true">&#8594;</span></button>
       </div>
     </div>
   </div>
 
-  <div class="track" tabindex="0" role="region" aria-label="Client websites, scrolls sideways">
+  <div class="track" tabindex="0" role="region" aria-label="Kundenettsider, ruller sidelengs" data-l10n="track-sites">
       <a class="pcard" href="#d-soulscaler" data-detail="d-soulscaler" aria-controls="d-soulscaler" aria-expanded="false">
         <span class="pcard-shot">
           <img src="assets/soulscaler.webp" width="1600" height="1000" loading="lazy" decoding="async" alt="">
@@ -313,7 +320,7 @@
 
 </div><!-- /.sheet -->
 
-<script src="hero.js?v=3" defer></script>
-<script src="main.js?v=3" defer></script>
+<script src="hero.js?v=4" defer></script>
+<script src="main.js?v=4" defer></script>
 </body>
 </html>

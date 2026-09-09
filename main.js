@@ -18,12 +18,43 @@
 
   var langButtons = Array.prototype.slice.call(document.querySelectorAll("[data-setlang]"));
 
+  /* A control's accessible name is copy like any other. Everything visible
+     ships twice and the CSS picks one; an aria-label cannot, so these follow
+     the switch from here. They ship Norwegian in the markup, with the rest of
+     the page, so a screen reader is never reading English names off a document
+     that declares itself nb — which is what it did before. English first, then
+     Norwegian. */
+
+  var LABELS = {
+    "sections":       ["Sections", "Seksjoner"],
+    "language":       ["Language", "Språk"],
+    "theme":          ["Switch colour scheme", "Bytt fargetema"],
+    "prev":           ["Previous", "Forrige"],
+    "next":           ["Next", "Neste"],
+    "work":           ["Work", "Arbeid"],
+    "tongues":        ["Languages", "Språk"],
+    "cue":            ["Go to the work", "Gå til arbeidet"],
+    "track-sites":    ["Client websites, scrolls sideways", "Kundenettsider, ruller sidelengs"],
+    "track-software": ["Software projects, scrolls sideways", "Programvareprosjekter, ruller sidelengs"]
+  };
+
+  var labelled = Array.prototype.slice.call(document.querySelectorAll("[data-l10n]"));
+
+  function setLabels(lang) {
+    var i = lang === "nb" ? 1 : 0;
+    labelled.forEach(function (el) {
+      var pair = LABELS[el.getAttribute("data-l10n")];
+      if (pair) el.setAttribute("aria-label", pair[i]);
+    });
+  }
+
   function setLang(lang, remember) {
     root.setAttribute("data-lang", lang);
     root.setAttribute("lang", lang);
     langButtons.forEach(function (b) {
       b.setAttribute("aria-pressed", String(b.dataset.setlang === lang));
     });
+    setLabels(lang);
     if (remember) store.set("lang", lang);
   }
 

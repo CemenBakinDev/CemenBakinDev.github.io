@@ -8,6 +8,8 @@ index.html        the opening, the two doors, the languages, the closing
 nettsider.html    the client websites
 programvare.html  the software
 404.html          the missing page (root-absolute paths, see below)
+robots.txt        allow everything, and point at the sitemap
+sitemap.xml       the three real pages
 styles.css        tokens, layout, and the print stylesheet
 hero.js           the ridges in the opening field (index only, decoration)
 main.js           language memory, theme memory, the bar, the project rows
@@ -39,6 +41,22 @@ python3 -m http.server 8088     # then open http://127.0.0.1:8088
 ```
 
 ## Editing
+
+**The share card is generated from the site, not drawn.** `assets/share.jpg` is
+the opening field rendered at 1200x630 with the ridges the page draws itself, so
+the preview cannot drift from the design and nothing in it is stock. Regenerate
+it the way the screenshots are made — a temporary `_card.html` that loads
+`styles.css` and `hero.js`, `--window-size=1200,630 --force-device-scale-factor=2`,
+downscaled and saved at `quality=88`. It is referenced absolutely
+(`https://cemenbakin.no/assets/share.jpg`), because a relative `og:image` is
+ignored by most crawlers.
+
+**An `aria-label` cannot ship twice.** Visible copy is duplicated and the CSS
+picks one, but an attribute has a single value, so the control names live in
+`LABELS` in `main.js` and follow the switch. They ship Norwegian in the markup
+with everything else. If you add a labelled control, give it
+`data-l10n="<key>"` and add the pair — otherwise a screen reader reads an
+English name off a page that declares itself `nb`.
 
 **Copy.** Every translatable element ships twice, marked `lang="en"` and
 `lang="nb"`; CSS shows one and hides the other. Edit both, or the language
