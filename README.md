@@ -101,6 +101,21 @@ a card — that is what keeps the evidence reading as the point.
 `sync()`. A website also needs a desktop shot and a phone shot — capture both
 with the headless Chromium recipe below, at 1440×900 and 390×844.
 
+**The section intro lives outside `.track-head`.** Above 48rem the head is two
+columns — heading on the left, counter and arrows on the right — so a paragraph
+inside it was laid out at half the page width and broke after five or six words.
+It looked like a rendering fault rather than a line of copy. The intro sits
+between the head and the row now, at `var(--measure)`, which is where a
+paragraph belongs anyway.
+
+**What the intro is for.** It says what is on offer, in plain terms, because a
+row of screenshots does not: a visitor who has not met you cannot tell from
+three thumbnails whether you design, build, write the copy, or only assemble
+something. Keep every claim in it traceable to a case below — the haulage
+firm's phone number and the coating shop's corrosion class are both quoted from
+the panels, and Leadbot's 211 tests and Time Heist's 30 900 lines are the same
+numbers the cases carry.
+
 **The two rows.** Each is a plain scroll container with `scroll-snap-type: x`,
 not a hijacked wheel: scrolling down the page always scrolls down. Three rules
 hold a row together — `margin-inline: calc(50% - 50vw)` pulls it to the window

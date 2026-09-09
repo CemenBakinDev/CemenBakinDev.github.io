@@ -748,7 +748,6 @@ main, .hero-in, .hero-foot {
   .track-head { grid-template-columns: minmax(0, 1fr) auto; }
 }
 .track-head .sec { padding-top: clamp(3rem, 8vh, 4.5rem); }
-.track-head .sec-lede { margin-bottom: 0; }
 
 /* The counter and the arrows are driven entirely by main.js, so they stay
    hidden until it has stamped the section. Without the script the row is
